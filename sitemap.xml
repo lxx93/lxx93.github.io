@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lxx93.online/gallery/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/music/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/tags/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/link/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/categories/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/about/index.html</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lxx93.online/2024/07/03/%E5%9B%BE%E5%BA%8A/</loc>
+    
+    <lastmod>2024-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lxx93.online/2024/07/11/boost%E5%BA%93asio%E7%BC%96%E7%A8%8B(%E4%B8%8B)/</loc>
     
     <lastmod>2024-07-17</lastmod>
@@ -12,15 +75,6 @@
   
   <url>
     <loc>https://lxx93.online/gallery/hyrz.html</loc>
-    
-    <lastmod>2024-07-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/gallery/index.html</loc>
     
     <lastmod>2024-07-11</lastmod>
     
@@ -57,15 +111,6 @@
   
   <url>
     <loc>https://lxx93.online/2024/07/06/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/</loc>
-    
-    <lastmod>2024-07-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/2024/07/03/%E5%9B%BE%E5%BA%8A/</loc>
     
     <lastmod>2024-07-07</lastmod>
     
@@ -111,33 +156,6 @@
   
   <url>
     <loc>https://lxx93.online/2024/07/04/makefile/</loc>
-    
-    <lastmod>2024-07-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/tags/index.html</loc>
-    
-    <lastmod>2024-07-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/link/index.html</loc>
-    
-    <lastmod>2024-07-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/categories/index.html</loc>
     
     <lastmod>2024-07-04</lastmod>
     
