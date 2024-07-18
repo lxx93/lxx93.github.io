@@ -1543,6 +1543,46 @@
 ]]></content>
   </entry>
   <entry>
+    <title>图床实现(通过百度智能云、七牛云、PicGo软件完成)</title>
+    <url>/2024/07/03/%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="1-给域名添加新的解析"><a href="#1-给域名添加新的解析" class="headerlink" title="1.给域名添加新的解析"></a>1.给域名添加新的解析</h1><p>进入百度智能云官网：<a href="https://cloud.baidu.com/">https://cloud.baidu.com/</a>，点击右上角的控制台</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/1.png"></p>
+<p>找到域名服务，点击域名管理，这里有你之前买的域名(没有买的最好买一个，很便宜)，下面要为域名添加一共新的解析</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/2.png"></p>
+<p>在添加解析记录的界面中，主机记录可以随便填，例如填image，记录类型选择CNAME记录，记录值先随便乱填(后期会改)，填写完上面内容后，点击确定，完成添加解析。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/3.png"></p>
+<h1 id="2-创建存储图片的空间"><a href="#2-创建存储图片的空间" class="headerlink" title="2.创建存储图片的空间"></a>2.创建存储图片的空间</h1><p>进入七牛云官网：<a href="https://marketing.qiniu.com/">https://marketing.qiniu.com/</a>，点击右上角的控制台</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/4.png"></p>
+<p>点击左上角的菜单，选择对象存储</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/5.png"></p>
+<p>进入后，选择空间管理，然后新建空间，存储空间的名称可以随便填，存储区域建议选择亚太-新加坡，访问控制选择公开，最好点击确定，完成空间建立</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/6.png"></p>
+<p>建立完成后，点击创建的空间名称，进入图床控制面板，选择域名管理，绑定域名</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/7.png"></p>
+<p>进入后，在添加域名的界面，其中加速域名是之前添加解析记录时填写的主机记录，而且后缀要加上你的域名(我因为之前填写过改域名，所以会提示创建过)。使用场景选择图片小文件，然后下面点击使用推荐配置，点击创建即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/8.png"></p>
+<p>绑定完成后，复制图上箭头所指的内容</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/9.png"></p>
+<p>然后对刚刚在百度智能云上添加的解析进行修改，将复制的内容粘贴到记录值，点击确定即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/10.png"></p>
+<h1 id="3-完成连接"><a href="#3-完成连接" class="headerlink" title="3.完成连接"></a>3.完成连接</h1><p>通过该网址下载PicGo：<a href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p>
+<p>下载完后，进入该软件，点击图床设置，选择七牛云</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/11.png"></p>
+<p>这样就进入了七牛云设置，首先是图库配置名，这里随便填；其次是AK和SK，这里需要填写七牛云米密匙管理中的AK和SK；然后设定Bucket这里填之前创建的空间名称；设定访问网址填写的是我们刚才填写的加速域名，这里前面要加http:&#x2F;&#x2F;；而设定存储区域这里是填as0（这里仅限刚刚与我选择的区域一样的情况，如果选择的区域不是亚太-新加坡则不是填这个）；最后是设定存储路径，这里可以先在七牛云的中创建存储图片的目录，然后这里就填写该目录名即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/12.png"></p>
+<p>点击了密匙管理就进入下面页面，然后分别复制AK和SK到PicGo对应位置，这里需要注意的是SK复制时，必须要打开显示复制，如果不打开显示复制，后面会出现问题</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/13.png"></p>
+<p>PicGo软件中七牛云设置填写完毕后，点击确定即可，这样就完成了图床的配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/14.png"></p>
+<p>完成配置后，在上传区，直接添加你要上传的本地图片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/15.png"></p>
+<p>上传完成后，然后到七牛云的空间管理中，点击picture目录就可以看见刚刚上传的图片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/16.png"></p>
+<p>这样，以后要在博客或者其它平台上要用到的这些图片时，可以直接用下面图中箭头指的地方的图片网址或者七牛云中上传图片的外链即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/17.png"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>shell脚本编程</title>
     <url>/2024/07/06/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="1-Shell脚本入门"><a href="#1-Shell脚本入门" class="headerlink" title="1.Shell脚本入门"></a>1.Shell脚本入门</h1><h2 id="1-1脚本格式要求"><a href="#1-1脚本格式要求" class="headerlink" title="1.1脚本格式要求"></a>1.1脚本格式要求</h2><ol>
@@ -1798,219 +1838,6 @@
 
 <p>输出的结果如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/15.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>图床实现(通过百度智能云、七牛云、PicGo软件完成)</title>
-    <url>/2024/07/03/%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="1-给域名添加新的解析"><a href="#1-给域名添加新的解析" class="headerlink" title="1.给域名添加新的解析"></a>1.给域名添加新的解析</h1><p>进入百度智能云官网：<a href="https://cloud.baidu.com/">https://cloud.baidu.com/</a>，点击右上角的控制台</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/1.png"></p>
-<p>找到域名服务，点击域名管理，这里有你之前买的域名(没有买的最好买一个，很便宜)，下面要为域名添加一共新的解析</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/2.png"></p>
-<p>在添加解析记录的界面中，主机记录可以随便填，例如填image，记录类型选择CNAME记录，记录值先随便乱填(后期会改)，填写完上面内容后，点击确定，完成添加解析。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/3.png"></p>
-<h1 id="2-创建存储图片的空间"><a href="#2-创建存储图片的空间" class="headerlink" title="2.创建存储图片的空间"></a>2.创建存储图片的空间</h1><p>进入七牛云官网：<a href="https://marketing.qiniu.com/">https://marketing.qiniu.com/</a>，点击右上角的控制台</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/4.png"></p>
-<p>点击左上角的菜单，选择对象存储</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/5.png"></p>
-<p>进入后，选择空间管理，然后新建空间，存储空间的名称可以随便填，存储区域建议选择亚太-新加坡，访问控制选择公开，最好点击确定，完成空间建立</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/6.png"></p>
-<p>建立完成后，点击创建的空间名称，进入图床控制面板，选择域名管理，绑定域名</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/7.png"></p>
-<p>进入后，在添加域名的界面，其中加速域名是之前添加解析记录时填写的主机记录，而且后缀要加上你的域名(我因为之前填写过改域名，所以会提示创建过)。使用场景选择图片小文件，然后下面点击使用推荐配置，点击创建即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/8.png"></p>
-<p>绑定完成后，复制图上箭头所指的内容</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/9.png"></p>
-<p>然后对刚刚在百度智能云上添加的解析进行修改，将复制的内容粘贴到记录值，点击确定即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/10.png"></p>
-<h1 id="3-完成连接"><a href="#3-完成连接" class="headerlink" title="3.完成连接"></a>3.完成连接</h1><p>通过该网址下载PicGo：<a href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p>
-<p>下载完后，进入该软件，点击图床设置，选择七牛云</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/11.png"></p>
-<p>这样就进入了七牛云设置，首先是图库配置名，这里随便填；其次是AK和SK，这里需要填写七牛云米密匙管理中的AK和SK；然后设定Bucket这里填之前创建的空间名称；设定访问网址填写的是我们刚才填写的加速域名，这里前面要加http:&#x2F;&#x2F;；而设定存储区域这里是填as0（这里仅限刚刚与我选择的区域一样的情况，如果选择的区域不是亚太-新加坡则不是填这个）；最后是设定存储路径，这里可以先在七牛云的中创建存储图片的目录，然后这里就填写该目录名即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/12.png"></p>
-<p>点击了密匙管理就进入下面页面，然后分别复制AK和SK到PicGo对应位置，这里需要注意的是SK复制时，必须要打开显示复制，如果不打开显示复制，后面会出现问题</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/13.png"></p>
-<p>PicGo软件中七牛云设置填写完毕后，点击确定即可，这样就完成了图床的配置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/14.png"></p>
-<p>完成配置后，在上传区，直接添加你要上传的本地图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/15.png"></p>
-<p>上传完成后，然后到七牛云的空间管理中，点击picture目录就可以看见刚刚上传的图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/16.png"></p>
-<p>这样，以后要在博客或者其它平台上要用到的这些图片时，可以直接用下面图中箭头指的地方的图片网址或者七牛云中上传图片的外链即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/tu_chuang/17.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>轻量级数据库sqlite3</title>
-    <url>/2024/07/01/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93sqlite3/</url>
-    <content><![CDATA[<h1 id="1、安装sqlite环境"><a href="#1、安装sqlite环境" class="headerlink" title="1、安装sqlite环境"></a>1、安装sqlite环境</h1><p>进入sqlite官网：<a href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/sqlite3/1.png"></p>
-<h1 id="2、创建数据库"><a href="#2、创建数据库" class="headerlink" title="2、创建数据库"></a>2、创建数据库</h1><p>在linux系统又两种方式创建数据库，如下所示：</p>
-<ul>
-<li><p>shell终端：sqlite3 my.db</p>
-</li>
-<li><p>c文件里：</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlite3 *db;                             //是指向数据库文件的句柄指针(地址)</span><br><span class="line">sqlite3_open(“my.db”,&amp;db)                //成功返回SQLITE_OK</span><br></pre></td></tr></table></figure>
-
-<h1 id="3、系统命令"><a href="#3、系统命令" class="headerlink" title="3、系统命令"></a>3、系统命令</h1><p>系统命令是非常主要的，通过这些系统目录可以很好的操作数据库sqlite。</p>
-<ol>
-<li><p>help：查看帮助信息</p>
-</li>
-<li><p>databases：查看数据库</p>
-</li>
-<li><p>tables：显示数据库中所有的表的表名</p>
-</li>
-<li><p>schema：查看表的结构</p>
-</li>
-<li><p>quit：退出数据库</p>
-</li>
-<li><p>exit：退出数据库</p>
-</li>
-</ol>
-<h1 id="4、增删改查"><a href="#4、增删改查" class="headerlink" title="4、增删改查"></a>4、增删改查</h1><ol>
-<li><p>创建一张表：create table 表名(字段名称1 字段类型, …);</p>
-</li>
-<li><p>删除一张表：drop table 表名;</p>
-</li>
-<li><p>向表中插入一条记录:insert into 表名 values(字段值1,字段值2,…);</p>
-</li>
-<li><p>查询记录：select * from 表名;</p>
-</li>
-<li><p>删除记录：delete from 表名 where 字段名称&#x3D;关键字;</p>
-</li>
-<li><p>更新记录：update 表名 set 字段名称1&#x3D;关键字 where 字段名称2&#x3D;关键字;</p>
-</li>
-</ol>
-<h1 id="5、数据库表的维护"><a href="#5、数据库表的维护" class="headerlink" title="5、数据库表的维护"></a>5、数据库表的维护</h1><ol>
-<li><p>数据库主键(设置的数据库将会是唯一存在的):PRIMARY KEY</p>
-</li>
-<li><p>自增字段(设置的字段值自动递增):AUTOINCREMENT</p>
-</li>
-</ol>
-<ul>
-<li>使用：关键字 AUTOINCREMENT —&gt; 只能用于整型(INTEGER)字段</li>
-</ul>
-<h1 id="6、API函数接口"><a href="#6、API函数接口" class="headerlink" title="6、API函数接口"></a>6、API函数接口</h1><ol>
-<li><p>int sqlite2_open(const char *filename,sqlite3 **ppDb);</p>
-<ul>
-<li>功能：创建并打开一个数据库(存在就直接打开)</li>
-<li>参数1：要打开的数据库名</li>
-<li>参数2：操作数据库的二级指针</li>
-<li>返回值：成功(SQLITE_OK)；失败(error_code)</li>
-</ul>
-</li>
-<li><p>const char <em>sqlite3_errmsg(sqlite3</em> db);</p>
-<ul>
-<li>功能：获取错误信息描述</li>
-</ul>
-</li>
-<li><p>int sqlite3_close(sqlite3* db);</p>
-<ul>
-<li>功能：关闭一个数据库</li>
-</ul>
-</li>
-<li><p>int sqlite3_exec(sqlite3* db, const char* sql, int <em>callback(参数), void</em> arg, char **errmsg);</p>
-<ul>
-<li><p>功能：执行一条sql语句</p>
-</li>
-<li><p>1：数据库的句柄指针</p>
-</li>
-<li><p>参数2；将要被执行的sql语句(拼接)</p>
-</li>
-<li><p>参数3：回调函数，只有在查询的时候，才执行此函数</p>
-</li>
-<li><p>参数4：是回调函数参3的参数</p>
-</li>
-<li><p>参数5：存放错误信息的地址(传出参数)</p>
-</li>
-<li><p>返回值：成功(SQLITE_OK)；失败(errcode错误码)</p>
-</li>
-</ul>
-</li>
-<li><p>int (<em>callback)(void</em> arg,int ncolumn,char** f_value,char** f_name);</p>
-<ul>
-<li><p>功能：每找到一次记录自动执行一次回调函数，得到查询结果</p>
-</li>
-<li><p>参数1：是sqlite3_exec传递的参数为回调函数使用</p>
-</li>
-<li><p>参数2：记录中包含的字段的数目</p>
-</li>
-<li><p>参数3：包含每个字段值的指针数值</p>
-</li>
-<li><p>参数4：包含每个字段名称的指针数值</p>
-</li>
-<li><p>返回值：成功(0)；失败(非0)</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>注意：如果只是向看一下表，可以调用sqlite3_get_table()函数</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>静态库与动态库</title>
-    <url>/2024/07/06/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="1-静态库"><a href="#1-静态库" class="headerlink" title="1.静态库"></a>1.静态库</h1><blockquote>
-<p>在linux中静态库由程序ar生成，现在静态库已经不像之前那么普遍了，这主要是由于程序都在使用动态库。关于静态库的命名如下：</p>
-</blockquote>
-<ul>
-<li><p>在Linux中静态库以lib作为前缀，以.a作为后缀，中间是库的名字(自己指定即可)，即libxxx.a</p>
-</li>
-<li><p>在Windows中静态库一般以lib作为前缀，以lib作为后缀，中间是库的名字(自己指定即可)，即libxxx.lib</p>
-</li>
-</ul>
-<h2 id="1-1生成静态库链接"><a href="#1-1生成静态库链接" class="headerlink" title="1.1生成静态库链接"></a>1.1生成静态库链接</h2><blockquote>
-<p>生成静态库，需要先对源文件进行汇编操作(使用参数-c)得到二进制格式的目标文件(.o格式)。然后再通过ar工具将目标文件打包就可以得到静态库文件了(libxxx.a)。</p>
-</blockquote>
-<p>使用ar工具创建静态库的时候需要三个参数：</p>
-<ul>
-<li><p>参数c：创建一个库，不管库是否存在，都将创建。</p>
-</li>
-<li><p>参数s：创建目标文件索引，这在创建较大的库时能加快时间。</p>
-</li>
-<li><p>参数r：在库中插入模块(替换)。默认新的成员添加在库的结尾处，如果模块名已经在库中存在，则替换同名的模块。</p>
-</li>
-</ul>
-<p>步骤：</p>
-<ol>
-<li><p>对源文件进行汇编成二进制格式的目标文件(.o格式)：gcc -c add.c sub.c div.c mult.c</p>
-</li>
-<li><p>生成静态库(发送给对方时，需要发送静态库和头文件(有就发))：ar rcs libcalc.a *.o</p>
-</li>
-</ol>
-<h2 id="1-2静态库的使用"><a href="#1-2静态库的使用" class="headerlink" title="1.2静态库的使用"></a>1.2静态库的使用</h2><p>参数-l：在程序编译的时候，指定使用的库(掐头去尾)</p>
-<p>参数-L：指定编译的时候，搜索的库的路径———–&gt;空格空不空都可以</p>
-<p>例子：假设文件夹里面有head.h、libcalc.a、main.c</p>
-<p><code>gcc main.c -o calc -L ./ -lcalc</code></p>
-<h1 id="2-动态库"><a href="#2-动态库" class="headerlink" title="2.动态库"></a>2.动态库</h1><blockquote>
-<p>动态链接库是程序运行时加载的库，当动态链接库正确部署之后，运行的多个程序可以使用同一个加载到内存中的动态库，因此在Linux中动态链接库也可称之为共享库。</p>
-</blockquote>
-<ul>
-<li><p>在Linux中动态库以lib作为前缀，以.so作为后缀，中间是库的名字(自己指定即可)，即libxxx.so</p>
-</li>
-<li><p>在Windows中动态库一般以lib作为前缀，以dll作为后缀，中间是库的名字(自己指定)，即libxxx.dll</p>
-</li>
-</ul>
-<h2 id="2-1生成动态链接库"><a href="#2-1生成动态链接库" class="headerlink" title="2.1生成动态链接库"></a>2.1生成动态链接库</h2><p>生成动态链接库是直接使用gcc命令并且需要添加-fPIC(-fpic)以及-shread参数</p>
-<ul>
-<li><p>-fPIC或-fpic参数：是使得gcc生成的代码是与位置无关的，也就是使用相对位置。</p>
-</li>
-<li><p>-shared参数：是告诉编译器生成一个动态链接库</p>
-</li>
-</ul>
-<p>步骤：</p>
-<ol>
-<li><p>gcc -c -fpic add.c sub.c mult.c div.c   &#x2F;&#x2F;生成.o文件</p>
-</li>
-<li><p>gcc -shared *.o -o libcalc.so       &#x2F;&#x2F;生成动态库文件libcalc.so</p>
-</li>
-<li><p>将动态库文件libcalc.so(一般是一些函数实现，不包括主函数文件)和头文件head.h放在文件夹two发送给客户即可</p>
-</li>
-</ol>
-<h2 id="2-2使用步骤"><a href="#2-2使用步骤" class="headerlink" title="2.2使用步骤"></a>2.2使用步骤</h2><p>生成可执行文件app</p>
-<p><code>gcc main.c -L . -lcalc -o app</code></p>
 ]]></content>
   </entry>
   <entry>
@@ -2512,6 +2339,115 @@
 <p>本地套接字的客户端实现：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SERV_ADDR <span class="string">&quot;serv.socket&quot;</span>       <span class="comment">//服务端用到的socetk文件</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CLIE_ADDR <span class="string">&quot;clie.socket&quot;</span>       <span class="comment">//客户端用到的socket文件</span></span></span><br><span class="line"><span class="comment">//本地套接字通信</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">int</span> cfd = Socket(AF_UNIX,SOCK_STREAM,<span class="number">0</span>);   <span class="comment">//创建本地套接字的第一个参数是AF_UNIX；第二个参数是报式还是流式都可以，返回一个本地套接字</span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_un</span> <span class="title">cliaddr</span>;</span>       <span class="comment">//存放客户端信息的结构体</span></span><br><span class="line">        bzero(&amp;cliaddr,<span class="keyword">sizeof</span>(cliaddr));   <span class="comment">//清0</span></span><br><span class="line">    	<span class="comment">//初始化客户端结构体信息</span></span><br><span class="line">        cliaddr.sun_family = AF_UNIX;</span><br><span class="line">        <span class="built_in">strcpy</span>(cliaddr.sun_path,CLIE_ADDR);     <span class="comment">//定义的文件名，相当于本地套接字的地址结构</span></span><br><span class="line">        <span class="type">int</span> len = offsetof(<span class="keyword">struct</span> sockaddr_un,sun_path) + <span class="built_in">strlen</span>(cliaddr.sun_path);   <span class="comment">//结构体大小等于2(AF_UNIX的大小)+文件名大小</span></span><br><span class="line">        unlink(CLIE_ADDR);          <span class="comment">//确保bind之前clie.sock文件(伪文件)不存在，bind会创建该文件</span></span><br><span class="line">        Bind(cfd,(<span class="keyword">struct</span> sockaddr *)&amp;cliaddr,len);       <span class="comment">//参3不能是sizeof(cliaddr)</span></span><br><span class="line">   		</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_un</span> <span class="title">servaddr</span>;</span>           <span class="comment">//存到服务端信息的结构体</span></span><br><span class="line">        bzero(&amp;servaddr,<span class="keyword">sizeof</span>(servaddr));</span><br><span class="line">        servaddr.sun_family = AF_UNIX;</span><br><span class="line">        <span class="built_in">strcpy</span>(servaddr.sun_path,SERV_ADDR);   <span class="comment">//这些是要连的服务端的信息</span></span><br><span class="line">        len = offsetof(<span class="keyword">struct</span> sockaddr_un,sun_path) + <span class="built_in">strlen</span>(servaddr.sun_path);     <span class="comment">//计算服务端地址结构的有效长度</span></span><br><span class="line">        Connect(cfd, (<span class="keyword">struct</span> sockaddr *)&amp;servaddr,len);     <span class="comment">//连接服务端</span></span><br><span class="line">        <span class="type">char</span> buf[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">while</span>(fgets(buf,<span class="keyword">sizeof</span>(buf),<span class="built_in">stdin</span>) != <span class="literal">NULL</span>)&#123;            <span class="comment">//从输入端输入信息到buf</span></span><br><span class="line">                write(cfd,buf,<span class="built_in">strlen</span>(buf));              <span class="comment">//从buf将信息传给服务端</span></span><br><span class="line">                len = read(cfd,buf,<span class="keyword">sizeof</span>(buf));         <span class="comment">//从服务端得到的信息存在buf</span></span><br><span class="line">                write(STDOUT_FILENO,buf,len);            <span class="comment">//将buf里的信息写到屏幕</span></span><br><span class="line">        &#125;</span><br><span class="line">        close(cfd);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>轻量级数据库sqlite3</title>
+    <url>/2024/07/01/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93sqlite3/</url>
+    <content><![CDATA[<h1 id="1、安装sqlite环境"><a href="#1、安装sqlite环境" class="headerlink" title="1、安装sqlite环境"></a>1、安装sqlite环境</h1><p>进入sqlite官网：<a href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/sqlite3/1.png"></p>
+<h1 id="2、创建数据库"><a href="#2、创建数据库" class="headerlink" title="2、创建数据库"></a>2、创建数据库</h1><p>在linux系统又两种方式创建数据库，如下所示：</p>
+<ul>
+<li><p>shell终端：sqlite3 my.db</p>
+</li>
+<li><p>c文件里：</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlite3 *db;                             //是指向数据库文件的句柄指针(地址)</span><br><span class="line">sqlite3_open(“my.db”,&amp;db)                //成功返回SQLITE_OK</span><br></pre></td></tr></table></figure>
+
+<h1 id="3、系统命令"><a href="#3、系统命令" class="headerlink" title="3、系统命令"></a>3、系统命令</h1><p>系统命令是非常主要的，通过这些系统目录可以很好的操作数据库sqlite。</p>
+<ol>
+<li><p>help：查看帮助信息</p>
+</li>
+<li><p>databases：查看数据库</p>
+</li>
+<li><p>tables：显示数据库中所有的表的表名</p>
+</li>
+<li><p>schema：查看表的结构</p>
+</li>
+<li><p>quit：退出数据库</p>
+</li>
+<li><p>exit：退出数据库</p>
+</li>
+</ol>
+<h1 id="4、增删改查"><a href="#4、增删改查" class="headerlink" title="4、增删改查"></a>4、增删改查</h1><ol>
+<li><p>创建一张表：create table 表名(字段名称1 字段类型, …);</p>
+</li>
+<li><p>删除一张表：drop table 表名;</p>
+</li>
+<li><p>向表中插入一条记录:insert into 表名 values(字段值1,字段值2,…);</p>
+</li>
+<li><p>查询记录：select * from 表名;</p>
+</li>
+<li><p>删除记录：delete from 表名 where 字段名称&#x3D;关键字;</p>
+</li>
+<li><p>更新记录：update 表名 set 字段名称1&#x3D;关键字 where 字段名称2&#x3D;关键字;</p>
+</li>
+</ol>
+<h1 id="5、数据库表的维护"><a href="#5、数据库表的维护" class="headerlink" title="5、数据库表的维护"></a>5、数据库表的维护</h1><ol>
+<li><p>数据库主键(设置的数据库将会是唯一存在的):PRIMARY KEY</p>
+</li>
+<li><p>自增字段(设置的字段值自动递增):AUTOINCREMENT</p>
+</li>
+</ol>
+<ul>
+<li>使用：关键字 AUTOINCREMENT —&gt; 只能用于整型(INTEGER)字段</li>
+</ul>
+<h1 id="6、API函数接口"><a href="#6、API函数接口" class="headerlink" title="6、API函数接口"></a>6、API函数接口</h1><ol>
+<li><p>int sqlite2_open(const char *filename,sqlite3 **ppDb);</p>
+<ul>
+<li>功能：创建并打开一个数据库(存在就直接打开)</li>
+<li>参数1：要打开的数据库名</li>
+<li>参数2：操作数据库的二级指针</li>
+<li>返回值：成功(SQLITE_OK)；失败(error_code)</li>
+</ul>
+</li>
+<li><p>const char <em>sqlite3_errmsg(sqlite3</em> db);</p>
+<ul>
+<li>功能：获取错误信息描述</li>
+</ul>
+</li>
+<li><p>int sqlite3_close(sqlite3* db);</p>
+<ul>
+<li>功能：关闭一个数据库</li>
+</ul>
+</li>
+<li><p>int sqlite3_exec(sqlite3* db, const char* sql, int <em>callback(参数), void</em> arg, char **errmsg);</p>
+<ul>
+<li><p>功能：执行一条sql语句</p>
+</li>
+<li><p>1：数据库的句柄指针</p>
+</li>
+<li><p>参数2；将要被执行的sql语句(拼接)</p>
+</li>
+<li><p>参数3：回调函数，只有在查询的时候，才执行此函数</p>
+</li>
+<li><p>参数4：是回调函数参3的参数</p>
+</li>
+<li><p>参数5：存放错误信息的地址(传出参数)</p>
+</li>
+<li><p>返回值：成功(SQLITE_OK)；失败(errcode错误码)</p>
+</li>
+</ul>
+</li>
+<li><p>int (<em>callback)(void</em> arg,int ncolumn,char** f_value,char** f_name);</p>
+<ul>
+<li><p>功能：每找到一次记录自动执行一次回调函数，得到查询结果</p>
+</li>
+<li><p>参数1：是sqlite3_exec传递的参数为回调函数使用</p>
+</li>
+<li><p>参数2：记录中包含的字段的数目</p>
+</li>
+<li><p>参数3：包含每个字段值的指针数值</p>
+</li>
+<li><p>参数4：包含每个字段名称的指针数值</p>
+</li>
+<li><p>返回值：成功(0)；失败(非0)</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>注意：如果只是向看一下表，可以调用sqlite3_get_table()函数</p>
 ]]></content>
   </entry>
   <entry>
@@ -3686,6 +3622,70 @@
 
 
 
+]]></content>
+  </entry>
+  <entry>
+    <title>静态库与动态库</title>
+    <url>/2024/07/06/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="1-静态库"><a href="#1-静态库" class="headerlink" title="1.静态库"></a>1.静态库</h1><blockquote>
+<p>在linux中静态库由程序ar生成，现在静态库已经不像之前那么普遍了，这主要是由于程序都在使用动态库。关于静态库的命名如下：</p>
+</blockquote>
+<ul>
+<li><p>在Linux中静态库以lib作为前缀，以.a作为后缀，中间是库的名字(自己指定即可)，即libxxx.a</p>
+</li>
+<li><p>在Windows中静态库一般以lib作为前缀，以lib作为后缀，中间是库的名字(自己指定即可)，即libxxx.lib</p>
+</li>
+</ul>
+<h2 id="1-1生成静态库链接"><a href="#1-1生成静态库链接" class="headerlink" title="1.1生成静态库链接"></a>1.1生成静态库链接</h2><blockquote>
+<p>生成静态库，需要先对源文件进行汇编操作(使用参数-c)得到二进制格式的目标文件(.o格式)。然后再通过ar工具将目标文件打包就可以得到静态库文件了(libxxx.a)。</p>
+</blockquote>
+<p>使用ar工具创建静态库的时候需要三个参数：</p>
+<ul>
+<li><p>参数c：创建一个库，不管库是否存在，都将创建。</p>
+</li>
+<li><p>参数s：创建目标文件索引，这在创建较大的库时能加快时间。</p>
+</li>
+<li><p>参数r：在库中插入模块(替换)。默认新的成员添加在库的结尾处，如果模块名已经在库中存在，则替换同名的模块。</p>
+</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li><p>对源文件进行汇编成二进制格式的目标文件(.o格式)：gcc -c add.c sub.c div.c mult.c</p>
+</li>
+<li><p>生成静态库(发送给对方时，需要发送静态库和头文件(有就发))：ar rcs libcalc.a *.o</p>
+</li>
+</ol>
+<h2 id="1-2静态库的使用"><a href="#1-2静态库的使用" class="headerlink" title="1.2静态库的使用"></a>1.2静态库的使用</h2><p>参数-l：在程序编译的时候，指定使用的库(掐头去尾)</p>
+<p>参数-L：指定编译的时候，搜索的库的路径———–&gt;空格空不空都可以</p>
+<p>例子：假设文件夹里面有head.h、libcalc.a、main.c</p>
+<p><code>gcc main.c -o calc -L ./ -lcalc</code></p>
+<h1 id="2-动态库"><a href="#2-动态库" class="headerlink" title="2.动态库"></a>2.动态库</h1><blockquote>
+<p>动态链接库是程序运行时加载的库，当动态链接库正确部署之后，运行的多个程序可以使用同一个加载到内存中的动态库，因此在Linux中动态链接库也可称之为共享库。</p>
+</blockquote>
+<ul>
+<li><p>在Linux中动态库以lib作为前缀，以.so作为后缀，中间是库的名字(自己指定即可)，即libxxx.so</p>
+</li>
+<li><p>在Windows中动态库一般以lib作为前缀，以dll作为后缀，中间是库的名字(自己指定)，即libxxx.dll</p>
+</li>
+</ul>
+<h2 id="2-1生成动态链接库"><a href="#2-1生成动态链接库" class="headerlink" title="2.1生成动态链接库"></a>2.1生成动态链接库</h2><p>生成动态链接库是直接使用gcc命令并且需要添加-fPIC(-fpic)以及-shread参数</p>
+<ul>
+<li><p>-fPIC或-fpic参数：是使得gcc生成的代码是与位置无关的，也就是使用相对位置。</p>
+</li>
+<li><p>-shared参数：是告诉编译器生成一个动态链接库</p>
+</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li><p>gcc -c -fpic add.c sub.c mult.c div.c   &#x2F;&#x2F;生成.o文件</p>
+</li>
+<li><p>gcc -shared *.o -o libcalc.so       &#x2F;&#x2F;生成动态库文件libcalc.so</p>
+</li>
+<li><p>将动态库文件libcalc.so(一般是一些函数实现，不包括主函数文件)和头文件head.h放在文件夹two发送给客户即可</p>
+</li>
+</ol>
+<h2 id="2-2使用步骤"><a href="#2-2使用步骤" class="headerlink" title="2.2使用步骤"></a>2.2使用步骤</h2><p>生成可执行文件app</p>
+<p><code>gcc main.c -L . -lcalc -o app</code></p>
 ]]></content>
   </entry>
   <entry>
