@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lxx93.online/gallery/wallpaper/index.html</loc>
+    
+    <lastmod>2024-07-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lxx93.online/gallery/index.html</loc>
     
     <lastmod>2024-07-19</lastmod>
@@ -11,16 +20,7 @@
   </url>
   
   <url>
-    <loc>https://lxx93.online/gallery/wallpaper.html</loc>
-    
-    <lastmod>2024-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lxx93.online/gallery/everyday.html</loc>
+    <loc>https://lxx93.online/gallery/everyday/index.html</loc>
     
     <lastmod>2024-07-18</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://lxx93.online/gallery/moon.html</loc>
+    <loc>https://lxx93.online/gallery/moon/index.html</loc>
     
     <lastmod>2024-07-18</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://lxx93.online/gallery/girl.html</loc>
+    <loc>https://lxx93.online/gallery/girl/index.html</loc>
     
     <lastmod>2024-07-18</lastmod>
     
