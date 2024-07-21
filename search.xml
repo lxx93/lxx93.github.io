@@ -951,25 +951,6 @@
       </tags>
   </entry>
   <entry>
-    <title>boost库asio编程(下)</title>
-    <url>/2024/07/19/boost%E5%BA%93asio%E7%BC%96%E7%A8%8B(%E4%B8%8B)/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>asio网络编程</category>
-      </categories>
-      <tags>
-        <tag>asio</tag>
-        <tag>异步编程</tag>
-        <tag>网络编程</tag>
-        <tag>粘包</tag>
-        <tag>Json</tag>
-        <tag>高并发</tag>
-        <tag>IOServicePool</tag>
-        <tag>协程</tag>
-        <tag>boost</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>boost库asio编程(上)</title>
     <url>/2024/07/08/boost%E5%BA%93asio%E7%BC%96%E7%A8%8B(%E4%B8%8A)/</url>
     <content><![CDATA[<h1 id="1-boost库"><a href="#1-boost库" class="headerlink" title="1. boost库"></a>1. boost库</h1><h2 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h2><p>网络编程是现代软件开发中无可替代的一环，无论是构建庞大的分布式系统还是小型的桌面应用，都离不开网络的支持。Boost.Asio起源于Boost库，是一款专为网络I&#x2F;O、定时器、串行端口通信设计的库，提供了同步和异步的编程模型，用以简化网络和低级I&#x2F;O的操作。它的设计初衷是提供一套简洁、一致且功能全面的接口，以满足开发者在多样化网络编程场景下的需求。</p>
@@ -1123,6 +1104,25 @@
         <tag>高并发</tag>
         <tag>boost</tag>
         <tag>socket</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>boost库asio编程(下)</title>
+    <url>/2024/07/19/boost%E5%BA%93asio%E7%BC%96%E7%A8%8B(%E4%B8%8B)/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>asio网络编程</category>
+      </categories>
+      <tags>
+        <tag>asio</tag>
+        <tag>异步编程</tag>
+        <tag>网络编程</tag>
+        <tag>粘包</tag>
+        <tag>Json</tag>
+        <tag>高并发</tag>
+        <tag>boost</tag>
+        <tag>IOServicePool</tag>
+        <tag>协程</tag>
       </tags>
   </entry>
   <entry>
@@ -1394,9 +1394,274 @@
         <tag>粘包</tag>
         <tag>Json</tag>
         <tag>高并发</tag>
+        <tag>boost</tag>
         <tag>IOServicePool</tag>
         <tag>协程</tag>
-        <tag>boost</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>shell脚本编程</title>
+    <url>/2024/07/06/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="1-Shell脚本入门"><a href="#1-Shell脚本入门" class="headerlink" title="1. Shell脚本入门"></a>1. Shell脚本入门</h1><h2 id="1-1-脚本格式要求"><a href="#1-1-脚本格式要求" class="headerlink" title="1.1 脚本格式要求"></a>1.1 脚本格式要求</h2><ol>
+<li><p>脚本以#!&#x2F;bin&#x2F;bash开头</p>
+</li>
+<li><p>脚本需要有执行权限</p>
+</li>
+</ol>
+<h2 id="1-2-shell脚本的执行方式"><a href="#1-2-shell脚本的执行方式" class="headerlink" title="1.2 shell脚本的执行方式"></a>1.2 shell脚本的执行方式</h2><ol>
+<li><p>输入脚本的绝对路径或相对路径</p>
+<ul>
+<li>需要对脚本+x权限，再执行脚本</li>
+</ul>
+</li>
+<li><p>sh + 脚本</p>
+<ul>
+<li>不需要对脚本+x权限，直接执行即可</li>
+</ul>
+</li>
+</ol>
+<p>案例：创建一个shell脚本，输出hello,world：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /root/shcode              #创建一个写shell脚本的文件夹</span><br><span class="line">vim hello.sh                    #在shcode目录下以vim文本编辑器编辑脚本</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输入内容如下：</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo “hello,world”              #保存退出 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">第一种方式执行(终端输入)</span></span><br><span class="line">chmod u+x hello.sh             #让该用户对文件有执行的权限</span><br><span class="line">./hello.sh                     #1相对路径执行</span><br><span class="line">/root/shcode/hello.sh          #2绝对路径执行</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">第二种方式执行(不需要权限,终端直接输入)</span></span><br><span class="line">sh hello.sh                    #1相对路径执行</span><br><span class="line">sh /root/shcode/hello.sh       #2绝对路径执行</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h1><h2 id="2-1-shell变量"><a href="#2-1-shell变量" class="headerlink" title="2.1 shell变量"></a>2.1 shell变量</h2><blockquote>
+<p>Linux shell中的变量分为，系统和用户自定义变量</p>
+</blockquote>
+<ol>
+<li><p>系统变量：$HOME、$PWD、$SHELL、$USER等等，比如echo $HOME</p>
+<ul>
+<li>显示当前shell中所有变量：set</li>
+</ul>
+</li>
+<li><p>shell变量的定义（自定义变量）</p>
+<ul>
+<li><p>定义变量：变量名&#x3D;值</p>
+</li>
+<li><p>撤销变量：unset 变量</p>
+</li>
+<li><p>声明静态变量，声明后不能unset：readonly 变量</p>
+</li>
+</ul>
+</li>
+<li><p>定义变量的规则</p>
+<ul>
+<li><p>变量名可以由字母、数字和下划线组成，但是不能以数字开头，</p>
+</li>
+<li><p>等号两侧不能有空格，如：A&#x3D;100</p>
+</li>
+<li><p>变量名称一般习惯为大写，这是一个规范</p>
+</li>
+</ul>
+</li>
+<li><p>将命令的返回值赋给变量</p>
+<ul>
+<li><p>A&#x3D;’date’反引号(键盘左上角第二颗键)，运行里面的命令，并把结果返回给变量A</p>
+</li>
+<li><p>A&#x3D;$(date)等价于反引号</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>案例：在var.sh里自定义变量、撤销变量、声明静态变量</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：定义变量</span></span><br><span class="line">A=100</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出变量需要加上$</span></span><br><span class="line">echo A=$A                  #第1种方法输出变量A</span><br><span class="line">echo &quot;A=$A&quot;                #第2种方法输出变量A</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2：撤销变量A</span></span><br><span class="line">unset A</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">撤销后输出不会报错，但会无结果</span></span><br><span class="line">echo &quot;A=$A&quot;                #输出无结果</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3：声明静态的变量B=2，不能<span class="built_in">unset</span></span></span><br><span class="line">readonly B=2</span><br><span class="line">echo B=$B                  #输出变量B</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">撤销静态变量会报错</span></span><br><span class="line">unset B                    #报错</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将指令返回的结果赋给变量</span></span><br><span class="line">C=`date`                   #第1种方式将命令的返回值赋给变量</span><br><span class="line">D=$(date)                  #第2种方式将命令的返回值赋给变量</span><br><span class="line">echo C=$C</span><br><span class="line">echo &quot;D=$D&quot; </span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/1.png"></p>
+<h2 id="2-2-设置环境变量"><a href="#2-2-设置环境变量" class="headerlink" title="2.2 设置环境变量"></a>2.2 设置环境变量</h2><ol>
+<li>将shell变量输出为环境变量&#x2F;全局变量(&#x2F;etc&#x2F;profile文件夹)</li>
+</ol>
+<ul>
+<li>export 变量名&#x3D;变量值</li>
+</ul>
+<ol start="2">
+<li>配置文件，让修改后的配置信息立即生效(终端输入)</li>
+</ol>
+<ul>
+<li>source</li>
+</ul>
+<ol start="3">
+<li>查询环境变量的值</li>
+</ol>
+<ul>
+<li>echo $变量名</li>
+</ul>
+<p>案例：在&#x2F;etc&#x2F;profile文件中定义TOMCAT_HOME环境变量，并查询其环境变量值</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以vim文本编辑器形式打开文件profile</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在最后一行输入这条命令，保存并退出</span></span><br><span class="line">export TOMCAT_HOME=/opt/tomcat</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">令修改的信息立即生效</span></span><br><span class="line">source /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">然后就可以在shell程序中使用了</span></span><br><span class="line">echo $TOMCAT_HOME</span><br></pre></td></tr></table></figure>
+
+<p>补：shell脚本的多行注释：:&lt;&lt;! 内容 !   ——-&gt;后面的!需要单独起行</p>
+<h2 id="2-3-位置参数变量"><a href="#2-3-位置参数变量" class="headerlink" title="2.3 位置参数变量"></a>2.3 位置参数变量</h2><blockquote>
+<p>当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量。比如：.&#x2F;myshell.sh 100 200，这个就是一个执行shell的命令行，可以在myshell脚本中获取到参数信息。</p>
+</blockquote>
+<ul>
+<li><p>$n：n为数字，$n代表本身，$1-$9代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如${10}；</p>
+</li>
+<li><p>$*：这个变量代表命令行中所有的参数，$*把所有的参数看成一个整数</p>
+</li>
+<li><p>$@：这个变量也代表命令行中所有的参数，不过$@把每个参数区分对待</p>
+</li>
+<li><p>$#：这个变量代表命令行中所有参数的个数</p>
+</li>
+</ul>
+<p>案例：编写一个shell脚本position.sh，在脚本中获取到命令行的各个参数信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以vim文本编辑器打开</span></span><br><span class="line">vim /root/shcode/myshell.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">内容代码</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo &quot;0=$0 1=$1 2=$2&quot;     #打印第0、1、2位置的参数</span><br><span class="line">echo &quot;所有的参数=$*&quot;        #输出所有参数，不包括$0</span><br><span class="line">echo &quot;$@&quot;                 #输出所有参数，不包括$0</span><br><span class="line">echo &quot;参数的个数=$#&quot;        #输出参数的个数</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/2.png"></p>
+<h2 id="2-4-预定义变量"><a href="#2-4-预定义变量" class="headerlink" title="2.4 预定义变量"></a>2.4 预定义变量</h2><blockquote>
+<p>就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</p>
+</blockquote>
+<ul>
+<li><p>$$：当前进程的进程好PID；</p>
+</li>
+<li><p>$!：后台运行的最后一个进程的进程号PID；</p>
+</li>
+<li><p>$?：最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正确执行；如果这个变量的值为非0(具体是哪个数，有命令自己来决定)，则证明上一个命令执行不正确。</p>
+</li>
+</ul>
+<p>案例：在一个shell脚本中简单使用一下预定义变量preVar.sh</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo &quot;当前执行的进程id=$$&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以后台方式运行一个脚本，并获取它的进程号</span></span><br><span class="line">/root/shcode/myshell.sh &amp;</span><br><span class="line">echo &quot;最后一个后台方式运行的进程id=$!&quot;</span><br><span class="line">echo &quot;执行的结果是=$?&quot;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/3.png"></p>
+<h2 id="2-5-运算符"><a href="#2-5-运算符" class="headerlink" title="2.5 运算符"></a>2.5 运算符</h2><ol>
+<li><p>$((运算符))或$[运算符]或者expr m 运算符 n</p>
+</li>
+<li><p>注意expr运算符间要有空格，如果希望将expr的结果赋给某个变量，使用&#96;&#96;(左上角键)</p>
+</li>
+<li><p>expr m 运算符 n 方式下的运算符</p>
+<ul>
+<li>expr *，&#x2F;，%  ———–&gt;乘，除，取余</li>
+</ul>
+</li>
+</ol>
+<p>案例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：计算(2+3)*4的值</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第1种方式:</span></span><br><span class="line">res1=$(((2+3)*4))</span><br><span class="line">echo &quot;res1=$res1&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第2种方式:</span></span><br><span class="line">res2=$[(2+3)*4]</span><br><span class="line">echo res2=$res2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第3种方式(数字之间要要空格):</span></span><br><span class="line">TEMP=`expr 2 + 3`</span><br><span class="line">RES3=`expr $TEMP \* 4`</span><br><span class="line">echo res3=$RES3</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2:请求出命令行的前两个参数的和(20+50)</span></span><br><span class="line">SUM=$[$1+$2]</span><br><span class="line">echo sum=$SUM</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/4.png"></p>
+<h1 id="3-shell进阶"><a href="#3-shell进阶" class="headerlink" title="3. shell进阶"></a>3. shell进阶</h1><h2 id="3-1-条件判断"><a href="#3-1-条件判断" class="headerlink" title="3.1 条件判断"></a>3.1 条件判断</h2><p>基本语法：</p>
+<ul>
+<li>[ condition ]  括号非空返回true,可以使用$?验证</li>
+<li>[ condition ] &amp;&amp; echo ok || echo notok  条件满足，执行后面的语句</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/5.png"></p>
+<p>应用实例：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：<span class="string">&quot;ok&quot;</span>是否等于<span class="string">&quot;ok&quot;</span></span></span><br><span class="line">if [ &quot;ok&quot; = &quot;ok&quot; ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;equal&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2：23是否大于等于22</span></span><br><span class="line">if [ 23 -ge 22 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;大于等于&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3：/root/shcode/aaa.txt 文件是否存在</span></span><br><span class="line">if [ -f /root/shcode/aaa.txt ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;存在&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例4：测试空</span></span><br><span class="line">if [ lxx ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;hello world&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/6.png"></p>
+<h2 id="3-2-流程控制"><a href="#3-2-流程控制" class="headerlink" title="3.2 流程控制"></a>3.2 流程控制</h2><blockquote>
+<p>1.多分支</p>
+<p>if [ 条件判断式 ]</p>
+<p>then</p>
+<p>​	代码</p>
+<p>elif [ 条件判断式 ]</p>
+<p>then</p>
+<p>​	代码</p>
+<p>fi</p>
+</blockquote>
+<p>注：[ 条件判断式 ]，中括号和条件判断式之间必须有空格，fi表示结束</p>
+<p>案例：请编写一个shell程序，如果输入的参数。大于等于60，则输出”及格了”，如果小于60，则输出”不及格”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!bin/bash</span></span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;及格了&quot;</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;不及格&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/7.png"></p>
+<blockquote>
+<p>2.case语句</p>
+<p>case $变量名 in</p>
+<p>“值1”)</p>
+<p>如果变量的值等于1，则执行程序1</p>
+<p>;;</p>
+<p>“值2”)</p>
+<p>如果变量的值等于2，则执行程序2</p>
+<p>;;</p>
+<p>….省略其他分支…</p>
+<p>*)</p>
+<p>如果变量的值都不是以上的值，则执行此程序</p>
+<p>;;</p>
+<p>esac</p>
+</blockquote>
+<p>案例：当命令行参数是1时，输出”周一”，是2时，就输出”周二”，其他情况输出”other”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">case $1 in</span><br><span class="line">&quot;1&quot;)</span><br><span class="line">echo &quot;周一&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;2&quot;)</span><br><span class="line">echo &quot;周二&quot;</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo &quot;other...&quot;</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/8.png"></p>
+<blockquote>
+<p>3.for循环(第1种)</p>
+<p>for 变量 in 值1 值2 值3</p>
+<p>do</p>
+<p>程序&#x2F;代码</p>
+<p>done</p>
+</blockquote>
+<p>案例：打印命令行输入的参数[这里可以看出$*和$@的区别]：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">注意 $*是把输出的参数，当作一个整体，所以只会输出一句</span></span><br><span class="line">for i in &quot;$*&quot;</span><br><span class="line">do</span><br><span class="line">	echo &quot;num is $i&quot;</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用<span class="variable">$@</span>来获取输入的参数，注意，这时是分别对待，所以有几个参数，就输出几句</span></span><br><span class="line">echo &quot;------------------------------&quot;</span><br><span class="line">for j in &quot;$@&quot;</span><br><span class="line">do</span><br><span class="line">	echo &quot;num is $j&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/9.png"></p>
+<blockquote>
+<p>4.for循环(第2种)</p>
+<p>for((初始值;循环控制条件;变量变化))</p>
+<p>do</p>
+<p>程序&#x2F;代码</p>
+<p>done</p>
+</blockquote>
+<p>案例：从1加到100的值输出显示(若想将1001变为一个变量，可以将100改为$1)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">SUM=0                  #定义一个变量SUM</span><br><span class="line">for((i=1;i&lt;=100;i++))</span><br><span class="line">do</span><br><span class="line"><span class="meta prompt_">	#</span><span class="language-bash">写业务代码</span></span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo &quot;总和SUM=$SUM&quot;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/10.png"></p>
+<blockquote>
+<p>5.while循环</p>
+<p>while [ 条件判断式 ]</p>
+<p>do</p>
+<p>程序&#x2F;代码</p>
+<p>done</p>
+</blockquote>
+<p>注意：while和[有空格，条件判断式和[也有空格</p>
+<p>案例：从命令行输入一个数n，统计从1+…+n的值是多少</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">SUM=0;                    #定义一个变量SUM</span><br><span class="line">i=0;</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line"><span class="meta prompt_">	#</span><span class="language-bash">写业务代码</span></span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo &quot;执行结果=$SUM&quot;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/11.png"></p>
+<h1 id="4-read读取控制台输入"><a href="#4-read读取控制台输入" class="headerlink" title="4. read读取控制台输入"></a>4. read读取控制台输入</h1><p>基本语法：read (选项) (参数)</p>
+<p>选项：</p>
+<ul>
+<li><p>-p：指定读取值时的提示符；</p>
+</li>
+<li><p>-t：指定读取值时等待的时间(秒)，如果没有在指定的时间内输入，就不再等待了；</p>
+</li>
+</ul>
+<p>参数：</p>
+<ul>
+<li>指定读取值的变量名</li>
+</ul>
+<p>案例：读取控制台输入一个NUM1值；读取控制台输入一个NUM2值，在10秒内输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取控制台输入一个NUM1</span></span><br><span class="line">read -p &quot;请输入一个NUM1=&quot; NUM1</span><br><span class="line">echo &quot;您输入的NUM1=$NUM1&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取控制台输入一个NUM2，并要求在10秒内输入</span></span><br><span class="line">read -t 10 -p &quot;请输入一个数NUM2=&quot; NUM2</span><br><span class="line">echo &quot;您输入的NUM2=$NUM2&quot;</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果如下(第一次是在10秒内输入了93，第二次是没有在10秒内输入数据)：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/12.png"></p>
+<h1 id="5-函数"><a href="#5-函数" class="headerlink" title="5. 函数"></a>5. 函数</h1><p>shell编程和其他编程语言一样，有系统函数，也可以有自定义函数，下面介绍2个</p>
+<h2 id="5-1-系统函数"><a href="#5-1-系统函数" class="headerlink" title="5.1 系统函数"></a>5.1 系统函数</h2><ul>
+<li><p>basename：返回完整路径最后&#x2F;的部分，常用于获取文件名</p>
+</li>
+<li><p>dirname：返回完整路径最后&#x2F;的前面的部分，常用于返回路径部分</p>
+</li>
+</ul>
+<p>案例：请返回&#x2F;home&#x2F;aaa&#x2F;test.txt的test.txt部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/13.png"></p>
+<p>案例：请返回&#x2F;home&#x2F;aaa&#x2F;test.txt的&#x2F;home&#x2F;aaa部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/14.png"></p>
+<h2 id="5-2-自定义函数"><a href="#5-2-自定义函数" class="headerlink" title="5.2 自定义函数"></a>5.2 自定义函数</h2><p>案例：计算输入两个参数的和(动态获取)getSum</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">function getSum()&#123;</span><br><span class="line">	SUM=$[$n1+$n2]</span><br><span class="line">	echo &quot;和是=$SUM&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输入两个值</span></span><br><span class="line">read -p &quot;请输入一个数n1=&quot; n1</span><br><span class="line">read -p &quot;请输入一个数n2=&quot; n2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">调用自定义函数</span></span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/15.png"></p>
+]]></content>
+      <categories>
+        <category>linux知识</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell编程</tag>
       </tags>
   </entry>
   <entry>
@@ -1748,271 +2013,6 @@
         <tag>域名</tag>
         <tag>PicGo</tag>
         <tag>解析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>shell脚本编程</title>
-    <url>/2024/07/06/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="1-Shell脚本入门"><a href="#1-Shell脚本入门" class="headerlink" title="1. Shell脚本入门"></a>1. Shell脚本入门</h1><h2 id="1-1-脚本格式要求"><a href="#1-1-脚本格式要求" class="headerlink" title="1.1 脚本格式要求"></a>1.1 脚本格式要求</h2><ol>
-<li><p>脚本以#!&#x2F;bin&#x2F;bash开头</p>
-</li>
-<li><p>脚本需要有执行权限</p>
-</li>
-</ol>
-<h2 id="1-2-shell脚本的执行方式"><a href="#1-2-shell脚本的执行方式" class="headerlink" title="1.2 shell脚本的执行方式"></a>1.2 shell脚本的执行方式</h2><ol>
-<li><p>输入脚本的绝对路径或相对路径</p>
-<ul>
-<li>需要对脚本+x权限，再执行脚本</li>
-</ul>
-</li>
-<li><p>sh + 脚本</p>
-<ul>
-<li>不需要对脚本+x权限，直接执行即可</li>
-</ul>
-</li>
-</ol>
-<p>案例：创建一个shell脚本，输出hello,world：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /root/shcode              #创建一个写shell脚本的文件夹</span><br><span class="line">vim hello.sh                    #在shcode目录下以vim文本编辑器编辑脚本</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输入内容如下：</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo “hello,world”              #保存退出 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">第一种方式执行(终端输入)</span></span><br><span class="line">chmod u+x hello.sh             #让该用户对文件有执行的权限</span><br><span class="line">./hello.sh                     #1相对路径执行</span><br><span class="line">/root/shcode/hello.sh          #2绝对路径执行</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">第二种方式执行(不需要权限,终端直接输入)</span></span><br><span class="line">sh hello.sh                    #1相对路径执行</span><br><span class="line">sh /root/shcode/hello.sh       #2绝对路径执行</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h1><h2 id="2-1-shell变量"><a href="#2-1-shell变量" class="headerlink" title="2.1 shell变量"></a>2.1 shell变量</h2><blockquote>
-<p>Linux shell中的变量分为，系统和用户自定义变量</p>
-</blockquote>
-<ol>
-<li><p>系统变量：$HOME、$PWD、$SHELL、$USER等等，比如echo $HOME</p>
-<ul>
-<li>显示当前shell中所有变量：set</li>
-</ul>
-</li>
-<li><p>shell变量的定义（自定义变量）</p>
-<ul>
-<li><p>定义变量：变量名&#x3D;值</p>
-</li>
-<li><p>撤销变量：unset 变量</p>
-</li>
-<li><p>声明静态变量，声明后不能unset：readonly 变量</p>
-</li>
-</ul>
-</li>
-<li><p>定义变量的规则</p>
-<ul>
-<li><p>变量名可以由字母、数字和下划线组成，但是不能以数字开头，</p>
-</li>
-<li><p>等号两侧不能有空格，如：A&#x3D;100</p>
-</li>
-<li><p>变量名称一般习惯为大写，这是一个规范</p>
-</li>
-</ul>
-</li>
-<li><p>将命令的返回值赋给变量</p>
-<ul>
-<li><p>A&#x3D;’date’反引号(键盘左上角第二颗键)，运行里面的命令，并把结果返回给变量A</p>
-</li>
-<li><p>A&#x3D;$(date)等价于反引号</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>案例：在var.sh里自定义变量、撤销变量、声明静态变量</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：定义变量</span></span><br><span class="line">A=100</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出变量需要加上$</span></span><br><span class="line">echo A=$A                  #第1种方法输出变量A</span><br><span class="line">echo &quot;A=$A&quot;                #第2种方法输出变量A</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2：撤销变量A</span></span><br><span class="line">unset A</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">撤销后输出不会报错，但会无结果</span></span><br><span class="line">echo &quot;A=$A&quot;                #输出无结果</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3：声明静态的变量B=2，不能<span class="built_in">unset</span></span></span><br><span class="line">readonly B=2</span><br><span class="line">echo B=$B                  #输出变量B</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">撤销静态变量会报错</span></span><br><span class="line">unset B                    #报错</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将指令返回的结果赋给变量</span></span><br><span class="line">C=`date`                   #第1种方式将命令的返回值赋给变量</span><br><span class="line">D=$(date)                  #第2种方式将命令的返回值赋给变量</span><br><span class="line">echo C=$C</span><br><span class="line">echo &quot;D=$D&quot; </span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/1.png"></p>
-<h2 id="2-2-设置环境变量"><a href="#2-2-设置环境变量" class="headerlink" title="2.2 设置环境变量"></a>2.2 设置环境变量</h2><ol>
-<li>将shell变量输出为环境变量&#x2F;全局变量(&#x2F;etc&#x2F;profile文件夹)</li>
-</ol>
-<ul>
-<li>export 变量名&#x3D;变量值</li>
-</ul>
-<ol start="2">
-<li>配置文件，让修改后的配置信息立即生效(终端输入)</li>
-</ol>
-<ul>
-<li>source</li>
-</ul>
-<ol start="3">
-<li>查询环境变量的值</li>
-</ol>
-<ul>
-<li>echo $变量名</li>
-</ul>
-<p>案例：在&#x2F;etc&#x2F;profile文件中定义TOMCAT_HOME环境变量，并查询其环境变量值</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以vim文本编辑器形式打开文件profile</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在最后一行输入这条命令，保存并退出</span></span><br><span class="line">export TOMCAT_HOME=/opt/tomcat</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">令修改的信息立即生效</span></span><br><span class="line">source /etc/profile</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">然后就可以在shell程序中使用了</span></span><br><span class="line">echo $TOMCAT_HOME</span><br></pre></td></tr></table></figure>
-
-<p>补：shell脚本的多行注释：:&lt;&lt;! 内容 !   ——-&gt;后面的!需要单独起行</p>
-<h2 id="2-3-位置参数变量"><a href="#2-3-位置参数变量" class="headerlink" title="2.3 位置参数变量"></a>2.3 位置参数变量</h2><blockquote>
-<p>当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量。比如：.&#x2F;myshell.sh 100 200，这个就是一个执行shell的命令行，可以在myshell脚本中获取到参数信息。</p>
-</blockquote>
-<ul>
-<li><p>$n：n为数字，$n代表本身，$1-$9代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如${10}；</p>
-</li>
-<li><p>$*：这个变量代表命令行中所有的参数，$*把所有的参数看成一个整数</p>
-</li>
-<li><p>$@：这个变量也代表命令行中所有的参数，不过$@把每个参数区分对待</p>
-</li>
-<li><p>$#：这个变量代表命令行中所有参数的个数</p>
-</li>
-</ul>
-<p>案例：编写一个shell脚本position.sh，在脚本中获取到命令行的各个参数信息</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以vim文本编辑器打开</span></span><br><span class="line">vim /root/shcode/myshell.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">内容代码</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo &quot;0=$0 1=$1 2=$2&quot;     #打印第0、1、2位置的参数</span><br><span class="line">echo &quot;所有的参数=$*&quot;        #输出所有参数，不包括$0</span><br><span class="line">echo &quot;$@&quot;                 #输出所有参数，不包括$0</span><br><span class="line">echo &quot;参数的个数=$#&quot;        #输出参数的个数</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/2.png"></p>
-<h2 id="2-4-预定义变量"><a href="#2-4-预定义变量" class="headerlink" title="2.4 预定义变量"></a>2.4 预定义变量</h2><blockquote>
-<p>就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</p>
-</blockquote>
-<ul>
-<li><p>$$：当前进程的进程好PID；</p>
-</li>
-<li><p>$!：后台运行的最后一个进程的进程号PID；</p>
-</li>
-<li><p>$?：最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正确执行；如果这个变量的值为非0(具体是哪个数，有命令自己来决定)，则证明上一个命令执行不正确。</p>
-</li>
-</ul>
-<p>案例：在一个shell脚本中简单使用一下预定义变量preVar.sh</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">echo &quot;当前执行的进程id=$$&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以后台方式运行一个脚本，并获取它的进程号</span></span><br><span class="line">/root/shcode/myshell.sh &amp;</span><br><span class="line">echo &quot;最后一个后台方式运行的进程id=$!&quot;</span><br><span class="line">echo &quot;执行的结果是=$?&quot;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/3.png"></p>
-<h2 id="2-5-运算符"><a href="#2-5-运算符" class="headerlink" title="2.5 运算符"></a>2.5 运算符</h2><ol>
-<li><p>$((运算符))或$[运算符]或者expr m 运算符 n</p>
-</li>
-<li><p>注意expr运算符间要有空格，如果希望将expr的结果赋给某个变量，使用&#96;&#96;(左上角键)</p>
-</li>
-<li><p>expr m 运算符 n 方式下的运算符</p>
-<ul>
-<li>expr *，&#x2F;，%  ———–&gt;乘，除，取余</li>
-</ul>
-</li>
-</ol>
-<p>案例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：计算(2+3)*4的值</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第1种方式:</span></span><br><span class="line">res1=$(((2+3)*4))</span><br><span class="line">echo &quot;res1=$res1&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第2种方式:</span></span><br><span class="line">res2=$[(2+3)*4]</span><br><span class="line">echo res2=$res2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用第3种方式(数字之间要要空格):</span></span><br><span class="line">TEMP=`expr 2 + 3`</span><br><span class="line">RES3=`expr $TEMP \* 4`</span><br><span class="line">echo res3=$RES3</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2:请求出命令行的前两个参数的和(20+50)</span></span><br><span class="line">SUM=$[$1+$2]</span><br><span class="line">echo sum=$SUM</span><br></pre></td></tr></table></figure>
-
-<p>输出的结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/4.png"></p>
-<h1 id="3-shell进阶"><a href="#3-shell进阶" class="headerlink" title="3. shell进阶"></a>3. shell进阶</h1><h2 id="3-1-条件判断"><a href="#3-1-条件判断" class="headerlink" title="3.1 条件判断"></a>3.1 条件判断</h2><p>基本语法：</p>
-<ul>
-<li>[ condition ]  括号非空返回true,可以使用$?验证</li>
-<li>[ condition ] &amp;&amp; echo ok || echo notok  条件满足，执行后面的语句</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/5.png"></p>
-<p>应用实例：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例1：<span class="string">&quot;ok&quot;</span>是否等于<span class="string">&quot;ok&quot;</span></span></span><br><span class="line">if [ &quot;ok&quot; = &quot;ok&quot; ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;equal&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例2：23是否大于等于22</span></span><br><span class="line">if [ 23 -ge 22 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;大于等于&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例3：/root/shcode/aaa.txt 文件是否存在</span></span><br><span class="line">if [ -f /root/shcode/aaa.txt ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;存在&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">案例4：测试空</span></span><br><span class="line">if [ lxx ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;hello world&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>输出的结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/6.png"></p>
-<h2 id="3-2-流程控制"><a href="#3-2-流程控制" class="headerlink" title="3.2 流程控制"></a>3.2 流程控制</h2><blockquote>
-<p>1.多分支</p>
-<p>if [ 条件判断式 ]</p>
-<p>then</p>
-<p>​	代码</p>
-<p>elif [ 条件判断式 ]</p>
-<p>then</p>
-<p>​	代码</p>
-<p>fi</p>
-</blockquote>
-<p>注：[ 条件判断式 ]，中括号和条件判断式之间必须有空格，fi表示结束</p>
-<p>案例：请编写一个shell程序，如果输入的参数。大于等于60，则输出”及格了”，如果小于60，则输出”不及格”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!bin/bash</span></span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;及格了&quot;</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">	echo &quot;不及格&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/7.png"></p>
-<blockquote>
-<p>2.case语句</p>
-<p>case $变量名 in</p>
-<p>“值1”)</p>
-<p>如果变量的值等于1，则执行程序1</p>
-<p>;;</p>
-<p>“值2”)</p>
-<p>如果变量的值等于2，则执行程序2</p>
-<p>;;</p>
-<p>….省略其他分支…</p>
-<p>*)</p>
-<p>如果变量的值都不是以上的值，则执行此程序</p>
-<p>;;</p>
-<p>esac</p>
-</blockquote>
-<p>案例：当命令行参数是1时，输出”周一”，是2时，就输出”周二”，其他情况输出”other”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">case $1 in</span><br><span class="line">&quot;1&quot;)</span><br><span class="line">echo &quot;周一&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;2&quot;)</span><br><span class="line">echo &quot;周二&quot;</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo &quot;other...&quot;</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/8.png"></p>
-<blockquote>
-<p>3.for循环(第1种)</p>
-<p>for 变量 in 值1 值2 值3</p>
-<p>do</p>
-<p>程序&#x2F;代码</p>
-<p>done</p>
-</blockquote>
-<p>案例：打印命令行输入的参数[这里可以看出$*和$@的区别]：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">注意 $*是把输出的参数，当作一个整体，所以只会输出一句</span></span><br><span class="line">for i in &quot;$*&quot;</span><br><span class="line">do</span><br><span class="line">	echo &quot;num is $i&quot;</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用<span class="variable">$@</span>来获取输入的参数，注意，这时是分别对待，所以有几个参数，就输出几句</span></span><br><span class="line">echo &quot;------------------------------&quot;</span><br><span class="line">for j in &quot;$@&quot;</span><br><span class="line">do</span><br><span class="line">	echo &quot;num is $j&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/9.png"></p>
-<blockquote>
-<p>4.for循环(第2种)</p>
-<p>for((初始值;循环控制条件;变量变化))</p>
-<p>do</p>
-<p>程序&#x2F;代码</p>
-<p>done</p>
-</blockquote>
-<p>案例：从1加到100的值输出显示(若想将1001变为一个变量，可以将100改为$1)</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">SUM=0                  #定义一个变量SUM</span><br><span class="line">for((i=1;i&lt;=100;i++))</span><br><span class="line">do</span><br><span class="line"><span class="meta prompt_">	#</span><span class="language-bash">写业务代码</span></span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo &quot;总和SUM=$SUM&quot;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/10.png"></p>
-<blockquote>
-<p>5.while循环</p>
-<p>while [ 条件判断式 ]</p>
-<p>do</p>
-<p>程序&#x2F;代码</p>
-<p>done</p>
-</blockquote>
-<p>注意：while和[有空格，条件判断式和[也有空格</p>
-<p>案例：从命令行输入一个数n，统计从1+…+n的值是多少</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">SUM=0;                    #定义一个变量SUM</span><br><span class="line">i=0;</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line"><span class="meta prompt_">	#</span><span class="language-bash">写业务代码</span></span><br><span class="line">	SUM=$[$SUM+$i]</span><br><span class="line">	i=$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo &quot;执行结果=$SUM&quot;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/11.png"></p>
-<h1 id="4-read读取控制台输入"><a href="#4-read读取控制台输入" class="headerlink" title="4. read读取控制台输入"></a>4. read读取控制台输入</h1><p>基本语法：read (选项) (参数)</p>
-<p>选项：</p>
-<ul>
-<li><p>-p：指定读取值时的提示符；</p>
-</li>
-<li><p>-t：指定读取值时等待的时间(秒)，如果没有在指定的时间内输入，就不再等待了；</p>
-</li>
-</ul>
-<p>参数：</p>
-<ul>
-<li>指定读取值的变量名</li>
-</ul>
-<p>案例：读取控制台输入一个NUM1值；读取控制台输入一个NUM2值，在10秒内输入</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取控制台输入一个NUM1</span></span><br><span class="line">read -p &quot;请输入一个NUM1=&quot; NUM1</span><br><span class="line">echo &quot;您输入的NUM1=$NUM1&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取控制台输入一个NUM2，并要求在10秒内输入</span></span><br><span class="line">read -t 10 -p &quot;请输入一个数NUM2=&quot; NUM2</span><br><span class="line">echo &quot;您输入的NUM2=$NUM2&quot;</span><br></pre></td></tr></table></figure>
-
-<p>输出的结果如下(第一次是在10秒内输入了93，第二次是没有在10秒内输入数据)：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/12.png"></p>
-<h1 id="5-函数"><a href="#5-函数" class="headerlink" title="5. 函数"></a>5. 函数</h1><p>shell编程和其他编程语言一样，有系统函数，也可以有自定义函数，下面介绍2个</p>
-<h2 id="5-1-系统函数"><a href="#5-1-系统函数" class="headerlink" title="5.1 系统函数"></a>5.1 系统函数</h2><ul>
-<li><p>basename：返回完整路径最后&#x2F;的部分，常用于获取文件名</p>
-</li>
-<li><p>dirname：返回完整路径最后&#x2F;的前面的部分，常用于返回路径部分</p>
-</li>
-</ul>
-<p>案例：请返回&#x2F;home&#x2F;aaa&#x2F;test.txt的test.txt部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/13.png"></p>
-<p>案例：请返回&#x2F;home&#x2F;aaa&#x2F;test.txt的&#x2F;home&#x2F;aaa部分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/14.png"></p>
-<h2 id="5-2-自定义函数"><a href="#5-2-自定义函数" class="headerlink" title="5.2 自定义函数"></a>5.2 自定义函数</h2><p>案例：计算输入两个参数的和(动态获取)getSum</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">function getSum()&#123;</span><br><span class="line">	SUM=$[$n1+$n2]</span><br><span class="line">	echo &quot;和是=$SUM&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输入两个值</span></span><br><span class="line">read -p &quot;请输入一个数n1=&quot; n1</span><br><span class="line">read -p &quot;请输入一个数n2=&quot; n2</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">调用自定义函数</span></span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></table></figure>
-
-<p>输出的结果如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lxx93/tuchuang@main/picture/shell/15.png"></p>
-]]></content>
-      <categories>
-        <category>linux知识</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>shell编程</tag>
       </tags>
   </entry>
   <entry>
@@ -2536,78 +2536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>静态库与动态库</title>
-    <url>/2024/07/06/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="1-静态库"><a href="#1-静态库" class="headerlink" title="1.静态库"></a>1.静态库</h1><blockquote>
-<p>在linux中静态库由程序ar生成，现在静态库已经不像之前那么普遍了，这主要是由于程序都在使用动态库。关于静态库的命名如下：</p>
-</blockquote>
-<ul>
-<li><p>在Linux中静态库以lib作为前缀，以.a作为后缀，中间是库的名字(自己指定即可)，即libxxx.a</p>
-</li>
-<li><p>在Windows中静态库一般以lib作为前缀，以lib作为后缀，中间是库的名字(自己指定即可)，即libxxx.lib</p>
-</li>
-</ul>
-<h2 id="1-1生成静态库链接"><a href="#1-1生成静态库链接" class="headerlink" title="1.1生成静态库链接"></a>1.1生成静态库链接</h2><blockquote>
-<p>生成静态库，需要先对源文件进行汇编操作(使用参数-c)得到二进制格式的目标文件(.o格式)。然后再通过ar工具将目标文件打包就可以得到静态库文件了(libxxx.a)。</p>
-</blockquote>
-<p>使用ar工具创建静态库的时候需要三个参数：</p>
-<ul>
-<li><p>参数c：创建一个库，不管库是否存在，都将创建。</p>
-</li>
-<li><p>参数s：创建目标文件索引，这在创建较大的库时能加快时间。</p>
-</li>
-<li><p>参数r：在库中插入模块(替换)。默认新的成员添加在库的结尾处，如果模块名已经在库中存在，则替换同名的模块。</p>
-</li>
-</ul>
-<p>步骤：</p>
-<ol>
-<li><p>对源文件进行汇编成二进制格式的目标文件(.o格式)：gcc -c add.c sub.c div.c mult.c</p>
-</li>
-<li><p>生成静态库(发送给对方时，需要发送静态库和头文件(有就发))：ar rcs libcalc.a *.o</p>
-</li>
-</ol>
-<h2 id="1-2静态库的使用"><a href="#1-2静态库的使用" class="headerlink" title="1.2静态库的使用"></a>1.2静态库的使用</h2><p>参数-l：在程序编译的时候，指定使用的库(掐头去尾)</p>
-<p>参数-L：指定编译的时候，搜索的库的路径———–&gt;空格空不空都可以</p>
-<p>例子：假设文件夹里面有head.h、libcalc.a、main.c</p>
-<p><code>gcc main.c -o calc -L ./ -lcalc</code></p>
-<h1 id="2-动态库"><a href="#2-动态库" class="headerlink" title="2.动态库"></a>2.动态库</h1><blockquote>
-<p>动态链接库是程序运行时加载的库，当动态链接库正确部署之后，运行的多个程序可以使用同一个加载到内存中的动态库，因此在Linux中动态链接库也可称之为共享库。</p>
-</blockquote>
-<ul>
-<li><p>在Linux中动态库以lib作为前缀，以.so作为后缀，中间是库的名字(自己指定即可)，即libxxx.so</p>
-</li>
-<li><p>在Windows中动态库一般以lib作为前缀，以dll作为后缀，中间是库的名字(自己指定)，即libxxx.dll</p>
-</li>
-</ul>
-<h2 id="2-1生成动态链接库"><a href="#2-1生成动态链接库" class="headerlink" title="2.1生成动态链接库"></a>2.1生成动态链接库</h2><p>生成动态链接库是直接使用gcc命令并且需要添加-fPIC(-fpic)以及-shread参数</p>
-<ul>
-<li><p>-fPIC或-fpic参数：是使得gcc生成的代码是与位置无关的，也就是使用相对位置。</p>
-</li>
-<li><p>-shared参数：是告诉编译器生成一个动态链接库</p>
-</li>
-</ul>
-<p>步骤：</p>
-<ol>
-<li><p>gcc -c -fpic add.c sub.c mult.c div.c   &#x2F;&#x2F;生成.o文件</p>
-</li>
-<li><p>gcc -shared *.o -o libcalc.so       &#x2F;&#x2F;生成动态库文件libcalc.so</p>
-</li>
-<li><p>将动态库文件libcalc.so(一般是一些函数实现，不包括主函数文件)和头文件head.h放在文件夹two发送给客户即可</p>
-</li>
-</ol>
-<h2 id="2-2使用步骤"><a href="#2-2使用步骤" class="headerlink" title="2.2使用步骤"></a>2.2使用步骤</h2><p>生成可执行文件app</p>
-<p><code>gcc main.c -L . -lcalc -o app</code></p>
-]]></content>
-      <categories>
-        <category>必备技能</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>动态库</tag>
-        <tag>静态库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>轻量级数据库sqlite3</title>
     <url>/2024/07/01/%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93sqlite3/</url>
     <content><![CDATA[<h1 id="1、安装sqlite环境"><a href="#1、安装sqlite环境" class="headerlink" title="1、安装sqlite环境"></a>1、安装sqlite环境</h1><p>进入sqlite官网：<a href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a></p>
@@ -2721,6 +2649,78 @@
       <tags>
         <tag>数据库</tag>
         <tag>sqlite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>静态库与动态库</title>
+    <url>/2024/07/06/%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="1-静态库"><a href="#1-静态库" class="headerlink" title="1.静态库"></a>1.静态库</h1><blockquote>
+<p>在linux中静态库由程序ar生成，现在静态库已经不像之前那么普遍了，这主要是由于程序都在使用动态库。关于静态库的命名如下：</p>
+</blockquote>
+<ul>
+<li><p>在Linux中静态库以lib作为前缀，以.a作为后缀，中间是库的名字(自己指定即可)，即libxxx.a</p>
+</li>
+<li><p>在Windows中静态库一般以lib作为前缀，以lib作为后缀，中间是库的名字(自己指定即可)，即libxxx.lib</p>
+</li>
+</ul>
+<h2 id="1-1生成静态库链接"><a href="#1-1生成静态库链接" class="headerlink" title="1.1生成静态库链接"></a>1.1生成静态库链接</h2><blockquote>
+<p>生成静态库，需要先对源文件进行汇编操作(使用参数-c)得到二进制格式的目标文件(.o格式)。然后再通过ar工具将目标文件打包就可以得到静态库文件了(libxxx.a)。</p>
+</blockquote>
+<p>使用ar工具创建静态库的时候需要三个参数：</p>
+<ul>
+<li><p>参数c：创建一个库，不管库是否存在，都将创建。</p>
+</li>
+<li><p>参数s：创建目标文件索引，这在创建较大的库时能加快时间。</p>
+</li>
+<li><p>参数r：在库中插入模块(替换)。默认新的成员添加在库的结尾处，如果模块名已经在库中存在，则替换同名的模块。</p>
+</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li><p>对源文件进行汇编成二进制格式的目标文件(.o格式)：gcc -c add.c sub.c div.c mult.c</p>
+</li>
+<li><p>生成静态库(发送给对方时，需要发送静态库和头文件(有就发))：ar rcs libcalc.a *.o</p>
+</li>
+</ol>
+<h2 id="1-2静态库的使用"><a href="#1-2静态库的使用" class="headerlink" title="1.2静态库的使用"></a>1.2静态库的使用</h2><p>参数-l：在程序编译的时候，指定使用的库(掐头去尾)</p>
+<p>参数-L：指定编译的时候，搜索的库的路径———–&gt;空格空不空都可以</p>
+<p>例子：假设文件夹里面有head.h、libcalc.a、main.c</p>
+<p><code>gcc main.c -o calc -L ./ -lcalc</code></p>
+<h1 id="2-动态库"><a href="#2-动态库" class="headerlink" title="2.动态库"></a>2.动态库</h1><blockquote>
+<p>动态链接库是程序运行时加载的库，当动态链接库正确部署之后，运行的多个程序可以使用同一个加载到内存中的动态库，因此在Linux中动态链接库也可称之为共享库。</p>
+</blockquote>
+<ul>
+<li><p>在Linux中动态库以lib作为前缀，以.so作为后缀，中间是库的名字(自己指定即可)，即libxxx.so</p>
+</li>
+<li><p>在Windows中动态库一般以lib作为前缀，以dll作为后缀，中间是库的名字(自己指定)，即libxxx.dll</p>
+</li>
+</ul>
+<h2 id="2-1生成动态链接库"><a href="#2-1生成动态链接库" class="headerlink" title="2.1生成动态链接库"></a>2.1生成动态链接库</h2><p>生成动态链接库是直接使用gcc命令并且需要添加-fPIC(-fpic)以及-shread参数</p>
+<ul>
+<li><p>-fPIC或-fpic参数：是使得gcc生成的代码是与位置无关的，也就是使用相对位置。</p>
+</li>
+<li><p>-shared参数：是告诉编译器生成一个动态链接库</p>
+</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li><p>gcc -c -fpic add.c sub.c mult.c div.c   &#x2F;&#x2F;生成.o文件</p>
+</li>
+<li><p>gcc -shared *.o -o libcalc.so       &#x2F;&#x2F;生成动态库文件libcalc.so</p>
+</li>
+<li><p>将动态库文件libcalc.so(一般是一些函数实现，不包括主函数文件)和头文件head.h放在文件夹two发送给客户即可</p>
+</li>
+</ol>
+<h2 id="2-2使用步骤"><a href="#2-2使用步骤" class="headerlink" title="2.2使用步骤"></a>2.2使用步骤</h2><p>生成可执行文件app</p>
+<p><code>gcc main.c -L . -lcalc -o app</code></p>
+]]></content>
+      <categories>
+        <category>必备技能</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>动态库</tag>
+        <tag>静态库</tag>
       </tags>
   </entry>
   <entry>
