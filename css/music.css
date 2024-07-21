@@ -1,0 +1,357 @@
+/*全局样式*/
+#page:has(#anMusic-page) {
+  border: 0;     /* 移除页面的边框 */
+  box-shadow: none !important;             /* 移除页面的阴影 */
+  padding: 0 !important;                           /* 移除页面的内边距 */
+  background: transparent !important;     /* 将页面背景设为透明 */
+}
+
+/*背景样式*/
+#an_music_bg {
+  display: none;          /* 默认隐藏背景 */
+  filter: blur(63px);      /* 添加模糊效果 */
+  opacity: 0.6;              /* 设置背景的不透明度 */
+  position: fixed;         /* 使背景固定 */
+  z-index: -999;            /* 将背景放置在最底层 */
+  background-attachment: local;            /* 背景附着在本地视口 */
+  background-position: center center;       /* 背景图居中对齐 */
+  background-size: cover;                          /* 背景图覆盖整个容器 */
+  background-repeat: no-repeat;             /* 背景图不重复 */
+  width: 200%;                                              /* 背景宽度设为原来的两倍 */
+  height: 200%;                                              /* 背景高度设为原来的两倍 */
+  top: -50%;                                                   /* 背景从顶部开始偏移 */
+  left: -50%;                                                   /* 背景从左侧开始偏移 */
+  transform: rotate(0deg);                           /* 不旋转背景 */
+}
+body:has(#anMusic-page) #an_music_bg {
+  display: block;                               /* 包含 #anMusic-page 时显示背景 */
+}
+body:has(#anMusic-page) {
+  background: rgb(255,198,115);      /* 包含 #anMusic-page 时设置背景色 */
+}
+
+/*APlayer 样式*/
+#anMusic-page meting-js .aplayer {
+  display: flex;                                /* 使播放器使用 Flexbox 布局 */
+  flex-direction: row-reverse;       /* 元素按行反向排列 */
+  background: rgba(0, 0, 0, 0);     /* 设置背景为透明 */
+  border: none;                               /* 移除边框 */
+  box-shadow: none;                     /* 移除阴影 */
+}
+
+body:has(#anMusic-page) #web_bg {
+  display: none;
+}
+body:has(#anMusic-page) #footer,
+body:has(#anMusic-page) #nav-music {
+  display: none;                        /* 隐藏网页背景、页脚和导航音乐 */
+}
+
+/*APlayer 详细样式*/
+#anMusic-page .aplayer-body {
+  width: 40%;                /* 设置播放器主体的宽度 */
+  height: 75vh;              /* 设置播放器主体的高度 */
+}
+#anMusic-page ol > li:hover {
+  background: #ffffff33;       /* 悬停时设置项目背景色 */
+  border-radius: 6px;            /* 设置圆角 */
+}
+#anMusic-page .aplayer-pic {
+  float: none;                        /* 不浮动 */
+  width: 180px;                     /* 设置封面宽度 */
+  height: 180px;                   /* 设置封面高度 */
+  border-radius: 12px;         /* 设置封面圆角 */
+  margin: auto;                    /* 设置居中对齐 */
+  left: 0;                                 /* 左侧对齐 */
+  right: 0;                               /* 右侧对齐 */
+}
+#anMusic-page .aplayer-info {
+  margin: 0 20px 0 20px;          /* 设置信息区域的外边距 */
+  border-bottom: none;          /* 移除下边框 */
+}
+#anMusic-page .aplayer-info .aplayer-music {
+  text-align: center;                    /* 设置文字居中对齐 */
+  height: auto;                             /* 高度自适应 */
+  margin: 15px;                            /* 设置外边距 */
+}
+#anMusic-page .aplayer-info .aplayer-music .aplayer-author,
+#anMusic-page .aplayer-info .aplayer-music .aplayer-title {
+  font-size: 2rem;                  /* 设置字体大小 */
+  font-weight: 700;                /* 设置字体粗细 */
+  color: #fff;                            /* 设置字体颜色 */
+}
+#anMusic-page .aplayer-info .aplayer-lrc {
+  height: 800%;                               /* 设置歌词区域高度 */
+  margin-top: 80px;                       /* 设置顶部外边距 */
+  mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #0000, #0000);    /* 设置渐变遮罩 */
+}
+#anMusic-page .aplayer-info .aplayer-lrc p {
+  font-size: 15px;                  /* 设置歌词字体大小 */
+  color: #fff;                           /* 设置歌词字体颜色 */
+}
+#anMusic-page .aplayer .aplayer-lrc:after,
+#anMusic-page .aplayer .aplayer-lrc:before {
+  display: none;                     /* 隐藏伪元素 */
+}
+
+/* 控制器样式 */
+#anMusic-page .aplayer-info .aplayer-controller {
+  position: fixed;                 /* 固定位置 */
+  max-width: 1500px;          /* 设置最大宽度 */
+  margin: auto;                    /* 居中对齐 */
+  left: 0;                                  /* 左侧对齐 */
+  right: 0;                              /* 右侧对齐 */
+  bottom: 50px;                   /* 设置底部外边距 */
+}
+#anMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  margin: 0 160px 0 150px;       /* 设置进度条包裹元素的外边距 */
+}
+#anMusic-page .aplayer-info .aplayer-controller .aplayer-played {
+  background: var(--anzhiyu-white) !important;       /* 设置已播放部分的背景色 */
+}
+#anMusic-page .aplayer-info .aplayer-controller .aplayer-thumb {
+  -webkit-transform: none;          /* 取消缩放 */
+  transform: none;                          /* 取消缩放 */
+  background: #fff !important;     /* 设置背景色 */
+}
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back,
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward,
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+  display: inline;                /* 显示图标 */
+  position: fixed;               /* 固定位置 */
+}
+#anMusic-page .aplayer-info .aplayer-time {
+  position: absolute;        /* 绝对定位 */
+  width: 100%;                   /* 设置宽度 */
+  bottom: 21px;                /* 设置底部外边距 */
+  height: 0;                        /* 设置高度 */
+  display: flex;                  /* 使用 Flexbox 布局 */
+  justify-content: flex-end;        /* 右对齐 */
+}
+#anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner {
+  margin-right: 18px;         /* 设置右外边距 */
+  margin-top: -8px;           /* 设置顶部外边距 */
+}
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back {
+  position: absolute;            /* 绝对定位 */
+  left: 0;                                  /* 左对齐 */
+}
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+  position: absolute;              /* 绝对定位 */
+  left: 40px;                              /* 左外边距 */
+}
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward {
+  position: absolute;               /* 绝对定位 */
+  left: 80px;                                /* 左外边距 */
+}
+
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon {
+  width: 2rem;                          /* 设置图标宽度 */
+  height: 2rem;                        /* 设置图标高度 */
+  margin-left: 15px;                 /* 设置左外边距 */
+}
+
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
+  display: none;                        /* 隐藏菜单图标 */
+}
+
+#anMusic-page .aplayer-info .aplayer-time .aplayer-icon path {
+  fill: var(--anzhiyu-white);        /* 设置图标路径的填充色 */
+  opacity: 0.8;                              /* 设置透明度 */
+}
+
+/*歌曲列表样式*/
+#anMusic-page .aplayer-list {
+  width: 60%;                                      /* 设置列表宽度 */
+  max-height: none !important;       /* 取消最大高度限制 */
+  height: 100%;                                   /* 设置列表高度 */
+}
+#anMusic-page ol {
+  max-height: 75vh !important;       /* 设置最大高度 */
+  padding-right: 25px;                      /* 设置右内边距 */
+}
+#anMusic-page ol > li {
+  border-top: 1px solid transparent;     /* 设置项目的顶部边框 */
+  font-size: 14px;                                      /* 设置字体大小 */
+}
+#anMusic-page ol > li.aplayer-list-light {
+  background: rgb(255 255 255 / 20%);      /* 设置背景色 */
+  border-radius: 6px;                       /* 设置圆角*/
+}
+#anMusic-page ol > li span {
+  color: var(--anzhiyu-white);       /* 设置列表项中的文本颜色为自定义的白色 */
+}
+#anMusic-page ol > li.aplayer-list-light .aplayer-list-cur {
+  display: none;         /* 隐藏当前播放的标记 */
+}
+#anMusic-page ol > li span.aplayer-list-author {
+  opacity: 0.6;            /* 设置作者名的透明度为 60% */
+}
+
+/* 导航栏样式 */
+.page:has(#anMusic-page) #nav {
+  backdrop-filter: none !important;       /* 取消背景滤镜 */
+  background: 0 0 !important;                 /* 取消背景颜色 */
+  border-bottom: none !important;       /* 移除底部边框 */
+}
+.page:has(#anMusic-page) #page-header.not-top-img #nav a,
+.page:has(#anMusic-page) #page-header #nav .back-home-button {
+  color: var(--anzhiyu-white);             /* 设置导航栏链接和返回首页按钮的文本颜色为自定义的白色 */
+}
+body:has(#anMusic-page) .s-sticker div {
+  color: var(--anzhiyu-white) !important;       /* 设置 .s-sticker 中 div 元素的文本颜色为自定义的白色 */
+}
+body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.aplayer-icon-loop {
+  margin-right: 15px;          /* 设置循环图标的右边距 */
+}
+[data-theme="dark"] .page:has(#anMusic-page) #page-header:before {
+  background-color: transparent;      /* 设置暗色主题下页面头部的伪元素背景颜色为透明 */
+}
+
+/* **** 移动端样式 ***** */
+@media screen and (max-width: 768px) {
+  body:has(#anMusic-page) #rightside {
+    display: none;                /* 在移动端隐藏右侧侧边栏 */
+  }
+  body:has(#anMusic-page) #content-inner,
+  body:has(#anMusic-page) #page {
+    z-index: auto;               /* 设置内容和页面的 z-index 为自动 */
+  }
+  /* 歌曲列表 */
+  #anMusic-page .aplayer-list {
+    position: fixed;            /* 固定位置 */
+    z-index: 1002;              /* 设置 z-index 为 1002，以便在其他元素之上 */
+    width: 100%;                /* 宽度为 100% */
+    bottom: -76%;             /* 设置底部位置偏移 */
+    left: 0;                            /* 左侧对齐 */
+    background: var(--sidebar-bg);         /* 设置背景色为自定义侧边栏背景色 */
+    height: auto;                                          /* 高度自动调整 */
+    border-radius: 15px 15px 0px 0px;       /* 设置圆角 */
+    padding: 15px 0px;                                /* 设置内边距 */
+  }
+  #anMusic-page .aplayer-list.aplayer-list-hide {
+    bottom: 0% !important;                   /* 隐藏列表时将底部位置调整为 0% */
+  }
+  #anMusic-page ol {
+    max-height: 60vh !important;            /* 设置最大高度为视口高度的 60% */
+    padding-right: 0px;                            /* 移除右侧内边距 */
+  }
+  #anMusic-page ol > li {
+    display: flex;                                         /* 使用 Flexbox 布局 */
+    margin: 0 10px;                                    /* 设置左右外边距 */
+  }
+  #anMusic-page ol > li span {
+    color: var(--font-color);                      /* 设置列表项文本颜色为自定义的字体颜色 */
+  }
+  #anMusic-page ol > li span.aplayer-list-title {
+    width: 30%;                                           /* 设置标题宽度为 30% */
+  }
+  #anMusic-page ol > li.aplayer-list-light {
+    background: #33a673;                        /* 设置选中列表项的背景色 */
+    padding: 5px 20px;                             /* 设置内边距 */
+    border-radius: 10px;                          /* 设置圆角 */
+  }
+  #anMusic-page ol > li.aplayer-list-light span {
+    color: #fff;                                          /* 设置选中列表项的文本颜色为白色 */
+  }
+  #anMusic-page ol > li span.aplayer-list-title {
+    max-width: 55%;                     /* 设置标题最大宽度 */
+    width: auto;                             /* 宽度自动调整 */
+    display: -webkit-box;             /* 使用 WebKit 特有的 Flexbox 布局 */
+    -webkit-line-clamp: 1;            /* 限制文本为一行 */
+    overflow: hidden;                    /* 隐藏超出的文本 */
+    -webkit-box-orient: vertical;      /* 设置盒子布局方向为纵向 */
+  }
+  #anMusic-page ol > li span.aplayer-list-author {
+    position: absolute;                  /* 绝对定位 */
+    right: 10px;                               /* 设置右边距 */
+    width: auto;                              /* 宽度自动调整 */
+    max-width: 35%;                      /* 设置最大宽度 */
+    display: -webkit-box;               /* 使用 WebKit 特有的 Flexbox 布局 */
+    -webkit-line-clamp: 1;             /* 限制文本为一行 */
+    overflow: hidden;                     /* 隐藏超出的文本 */
+    -webkit-box-orient: vertical;    /* 设置盒子布局方向为纵向 */
+  }
+  #anMusic-page ol > li.aplayer-list-light span.aplayer-list-author {
+    right: 15px;                              /* 调整选中列表项中作者名的右边距 */
+  }
+  /* 歌词信息 */
+  #anMusic-page .aplayer-body {
+    width: 100%;                             /* 设置宽度为 100% */
+    position: fixed;                          /* 固定位置 */
+    margin: auto;                            /* 居中对齐 */
+    left: 0;                                  /* 左侧对齐 */
+    right: 0;                          /* 右侧对齐 */
+    top: 100px;                      /* 设置顶部位置 */
+  }
+  #anMusic-page .aplayer-info .aplayer-lrc {
+    margin-top: 40px;             /* 设置顶部外边距 */
+    height: auto;                      /* 高度自动调整 */
+    max-height: 200%;            /* 设置最大高度为 200% */
+    min-height: 100%;             /* 设置最小高度为 100% */
+    mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #0000, #0000);  * 设置渐变遮罩 */
+  }
+  #anMusic-page .aplayer-info .aplayer-lrc p.aplayer-lrc-current {
+    color: #33a673;               /* 设置当前歌词的颜色 */
+  }
+  /* 控制按键和进度条 */
+  #anMusic-page .aplayer-info .aplayer-controller {
+    width: 100%;                /* 设置宽度为 100% */
+    bottom: 100px;           /* 设置底部位置 */
+  }
+  #anMusic-page .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+    margin: 0 30px;              /* 设置左右外边距 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time {
+    bottom: -40px;              /* 设置底部位置 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner {
+    position: absolute;            /* 绝对定位 */
+    width: 100%;                       /* 设置宽度为 100% */
+    margin-right: 0;                  /* 移除右边距 */
+    margin-top: -33px;            /* 设置顶部外边距 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-dtime {
+    position: absolute;              /* 绝对定位 */
+    right: 30px;                           /* 设置右边距 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-time-inner .aplayer-ptime {
+    position: absolute;             /* 绝对定位 */
+    left: 35px;                             /* 设置左边距 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-back {
+    margin: auto;                      /* 居中对齐 */
+    right: 110px;                         /* 设置右边距 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-play {
+    margin: auto;                      /* 居中对齐 */
+    right: 0;                                /* 设置右边距为 0 */
+    left: 0;                                  /* 设置左边距为 0 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-forward {
+    margin: auto;                 /* 居中对齐 */
+    left: 110px;                     /* 设置左边距 */
+    right: 0;                           /* 设置右边距为 0 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-order {
+    position: absolute;         /* 绝对定位，使元素相对于最近的已定位祖先元素进行定位 */
+    left: 22px;                         /* 距离左侧 22 像素 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-loop {
+    position: absolute;       /* 绝对定位，使元素相对于最近的已定位祖先元素进行定位 */
+    right: 25px;                    /* 距离右侧 25 像素 */
+  }
+  #anMusic-page .aplayer-info .aplayer-time .aplayer-icon-menu {
+    display: inline;               /* 设置元素为行内元素，使其在同一行内显示 */
+    position: absolute;      /* 绝对定位，使元素相对于最近的已定位祖先元素进行定位 */
+    right: 25px;                   /* 距离右侧 25 像素 */
+    top: -90px;                    /* 距离顶部 -90 像素，这里使用负值使其向上移动 */
+  }
+  #anMusic-page .aplayer-volume-bar-wrap {
+    bottom: 0px;                /* 距离底部 0 像素 */
+    right: 7px;                     /* 距离右侧 7 像素 */
+  }
+  #anMusic-page .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap {
+    left: -66px;                     /* 距离左侧 -66 像素，这里使用负值使其向左移动 */
+  }
+}
