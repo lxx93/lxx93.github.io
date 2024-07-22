@@ -224,7 +224,7 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
     width: 100%;                /* 宽度为 100% */
     bottom: -76%;             /* 设置底部位置偏移 */
     left: 0;                            /* 左侧对齐 */
-    background: var(--sidebar-bg);         /* 设置背景色为自定义侧边栏背景色 */
+    background: rgb(255,198,115);         /* 设置背景色为自定义侧边栏背景色 */
     height: auto;                                          /* 高度自动调整 */
     border-radius: 15px 15px 0px 0px;       /* 设置圆角 */
     padding: 15px 0px;                                /* 设置内边距 */
