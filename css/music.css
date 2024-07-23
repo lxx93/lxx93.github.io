@@ -210,15 +210,16 @@ body:has(#anMusic-page) .aplayer .aplayer-info .aplayer-controller .aplayer-time
 
 /* **** 移动端样式 ***** */
 @media screen and (max-width: 768px) {
-  body:has(#anMusic-page) #footer,
-  body:has(#anMusic-page) #nav-music,
-  body:has(#anMusic-page) #background,
   body:has(#anMusic-page) #rightside {
     display: none;                /* 在移动端隐藏右侧侧边栏 */
   }
   body:has(#anMusic-page) #content-inner,
   body:has(#anMusic-page) #page {
     z-index: auto;               /* 设置内容和页面的 z-index 为自动 */
+  }
+  /* 设置页面背景颜色 */
+  body:has(#anMusic-page) {
+    background-color: #00FFFF; /* 修改为您想要的背景颜色 */
   }
   /* 歌曲列表 */
   #anMusic-page .aplayer-list {
