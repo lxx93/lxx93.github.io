@@ -5,8 +5,8 @@ var anzhiyu = {
       return;
     }
 
-    // 检查是否在手机端打开网页
-    if (window.innerWidth <= 768) {
+    // 检查是否在手机端打开网页并且是音乐页面
+    if (window.innerWidth <= 768 && window.location.pathname === "/music/") {
       // 在手机端隐藏背景、页脚和导航音乐
       document.getElementById('footer').style.display = 'none';
       document.getElementById('nav-music').style.display = 'none';
@@ -68,7 +68,7 @@ anzhiyu.changeMusicBg(false);
 
 // 添加窗口调整事件，以便在调整窗口大小时检查设备类型
 window.addEventListener('resize', function() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 768 && window.location.pathname === "/music/") {
     document.getElementById('footer').style.display = 'none';
     document.getElementById('nav-music').style.display = 'none';
     document.getElementById('an_music_bg').style.display = 'none';
