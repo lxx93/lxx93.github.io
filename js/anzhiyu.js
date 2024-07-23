@@ -11,6 +11,11 @@ var anzhiyu = {
       document.getElementById('footer').style.display = 'none';
       document.getElementById('nav-music').style.display = 'none';
       document.getElementById('an_music_bg').style.display = 'none';
+      // 修改手机端背景颜色
+      document.body.style.backgroundColor = '#00FAFA'; // 你可以在这里设置你想要的背景颜色
+    } else {
+      // 恢复默认背景颜色
+      document.body.style.backgroundColor = '';
     }
 
     const anMusicBg = document.getElementById("an_music_bg");
@@ -72,9 +77,11 @@ window.addEventListener('resize', function() {
     document.getElementById('footer').style.display = 'none';
     document.getElementById('nav-music').style.display = 'none';
     document.getElementById('an_music_bg').style.display = 'none';
+    document.body.style.backgroundColor = '#00FAFA'; // 确保背景颜色在窗口调整时也能正确设置
   } else {
     document.getElementById('footer').style.display = '';
     document.getElementById('nav-music').style.display = '';
     document.getElementById('an_music_bg').style.display = '';
+    document.body.style.backgroundColor = ''; // 恢复默认背景颜色
   }
 });
