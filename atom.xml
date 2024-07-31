@@ -6,7 +6,7 @@
   <link href="https://lxx93.online/atom.xml" rel="self"/>
   
   <link href="https://lxx93.online/"/>
-  <updated>2024-07-31T16:47:20.670Z</updated>
+  <updated>2024-07-31T17:05:44.248Z</updated>
   <id>https://lxx93.online/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lxx</title>
+    <link href="https://lxx93.online/2024/08/01/lxx/"/>
+    <id>https://lxx93.online/2024/08/01/lxx/</id>
+    <published>2024-07-31T17:05:16.000Z</published>
+    <updated>2024-07-31T17:05:44.248Z</updated>
+    
+    <content type="html"><![CDATA[<p>1123132131312</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1123132131312&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>c++并发编程(下)</title>
@@ -367,6 +388,8 @@
     
     <category term="socket" scheme="https://lxx93.online/tags/socket/"/>
     
+    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
+    
     <category term="协议" scheme="https://lxx93.online/tags/%E5%8D%8F%E8%AE%AE/"/>
     
     <category term="套接字" scheme="https://lxx93.online/tags/%E5%A5%97%E6%8E%A5%E5%AD%97/"/>
@@ -378,8 +401,6 @@
     <category term="UDP" scheme="https://lxx93.online/tags/UDP/"/>
     
     <category term="select" scheme="https://lxx93.online/tags/select/"/>
-    
-    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
     
     <category term="poll" scheme="https://lxx93.online/tags/poll/"/>
     
