@@ -430,11 +430,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
@@ -470,11 +470,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
@@ -571,8 +571,6 @@
     
     <category term="socket" scheme="https://lxx93.online/tags/socket/"/>
     
-    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
-    
     <category term="协议" scheme="https://lxx93.online/tags/%E5%8D%8F%E8%AE%AE/"/>
     
     <category term="套接字" scheme="https://lxx93.online/tags/%E5%A5%97%E6%8E%A5%E5%AD%97/"/>
@@ -584,6 +582,8 @@
     <category term="UDP" scheme="https://lxx93.online/tags/UDP/"/>
     
     <category term="select" scheme="https://lxx93.online/tags/select/"/>
+    
+    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
     
     <category term="poll" scheme="https://lxx93.online/tags/poll/"/>
     
