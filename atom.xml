@@ -6,7 +6,7 @@
   <link href="https://lxx93.online/atom.xml" rel="self"/>
   
   <link href="https://lxx93.online/"/>
-  <updated>2024-09-05T00:42:07.765Z</updated>
+  <updated>2024-09-05T00:43:43.540Z</updated>
   <id>https://lxx93.online/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>c++全栈聊天项目</title>
-    <link href="https://lxx93.online/2024/08/29/c++%E5%85%A8%E6%A0%88%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://lxx93.online/2024/08/29/c++%E5%85%A8%E6%A0%88%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/</id>
-    <published>2024-08-29T07:34:24.000Z</published>
-    <updated>2024-09-05T00:42:07.765Z</updated>
+    <link href="https://lxx93.online/2024/09/03/c++%E5%85%A8%E6%A0%88%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://lxx93.online/2024/09/03/c++%E5%85%A8%E6%A0%88%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/</id>
+    <published>2024-09-03T07:34:24.000Z</published>
+    <updated>2024-09-05T00:43:43.540Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>本项目为c++全栈聊天项目实战，包括PC端QT界面编程，asio异步服务器设计，beast网络库搭建http网关，nodejs搭建验证服务，各服务间用grpc通信，server和client用asio通信等，也包括用户信息的录入等，实现跨平台设计，先设计windows的server，之后再考虑移植到linux中，较为全面的展示c++在实际项目中的应用。</p><p>在QT创建一个主界面：</p><p>新建—&gt;Application—&gt;Qt Widgets Application—&gt;项目名称为lxxchat—&gt;类名为MainWindow—&gt;基类为QMainWindow</p><p>创建一个登录的对话框：</p><p>新建—&gt;Qt—&gt;Qt设计师界面类—&gt;选择界面模板：Dialog without Buttons—&gt;类名为：LoginDialog—&gt;</p>]]></content>
     
@@ -409,11 +409,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
@@ -449,11 +449,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
