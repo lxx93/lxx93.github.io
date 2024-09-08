@@ -6,7 +6,7 @@
   <link href="https://lxx93.online/atom.xml" rel="self"/>
   
   <link href="https://lxx93.online/"/>
-  <updated>2024-09-07T15:45:15.635Z</updated>
+  <updated>2024-09-08T15:27:42.324Z</updated>
   <id>https://lxx93.online/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>聊天项目</title>
+    <title>c++全栈聊天项目</title>
     <link href="https://lxx93.online/2024/09/03/%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/"/>
     <id>https://lxx93.online/2024/09/03/%E8%81%8A%E5%A4%A9%E9%A1%B9%E7%9B%AE/</id>
     <published>2024-09-03T07:34:24.000Z</published>
-    <updated>2024-09-07T15:45:15.635Z</updated>
+    <updated>2024-09-08T15:27:42.324Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>本项目为c++全栈聊天项目实战，包括PC端QT界面编程，asio异步服务器设计，beast网络库搭建http网关，nodejs搭建验证服务，各服务间用grpc通信，server和client用asio通信等，也包括用户信息的录入等，实现跨平台设计，先设计windows的server，之后再考虑移植到linux中，较为全面的展示c++在实际项目中的应用。</p><p>1.在QT创建一个主界面：</p><p>新建—&gt;Application—&gt;Qt Widgets Application—&gt;项目名称为lxxchat—&gt;类名为MainWindow—&gt;基类为QMainWindow</p><p>2.创建一个登录的对话框：</p><p>新建—&gt;Qt—&gt;Qt设计师界面类—&gt;选择界面模板：Dialog without Buttons—&gt;类名为：LoginDialog</p><p>3.创建一个资源文件：</p><p>新建—&gt;Qt—&gt;Qt Resource File—&gt;名称为rc</p><p>4.创建一个注册的对话框</p><p>新建—&gt;Qt—&gt;Qt设计师界面类—&gt;选择界面模板：Dialog without Buttons—&gt;类名为：RegisterDialog</p><p>5.创建一个全局的文件</p><p>新建—&gt;c++—&gt;c++ Header File—&gt;名称为global.h</p><p>新建—&gt;c++—&gt;c++ Source File—&gt;名称为global.cpp</p><p>6.单例类的创建</p><p>新建—&gt;c++—&gt;c++ Header File—&gt;名称为singleton.h</p><p>7.创建一个Qt的Http发送的管理者类</p><p>新建—&gt;c++—&gt;c++class—&gt;类名为HttpMgr</p><hr><p>1.绑定和监听连接</p><p>利用visual studio创建一个空项目，项目名字为GateServer，然后按照之前的方法配置boost库和jsoncpp配置好后，我们添加一个新的类，名字叫CServer。添加成功后生成的CServer.h和CServer.cpp也会自动加入到项目中。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h1><p>本项目为c++全栈聊天项目实战，包括PC端QT界面编程，asio异步服务器设计，beast网络库搭建http网关，nodejs搭建验证服务，各服务间用grpc通信，server和client用asio通信等，也包括用户信息的录入等，实现跨平台设计，先设计windows的server，之后再考虑移植到linux中，较为全面的展示c++在实际项目中的应用。</p><p>1.在QT创建一个主界面：</p><p>新建—&gt;Application—&gt;Qt Widgets Application—&gt;项目名称为lxxchat—&gt;类名为MainWindow—&gt;基类为QMainWindow</p><p>2.创建一个登录的对话框：</p><p>新建—&gt;Qt—&gt;Qt设计师界面类—&gt;选择界面模板：Dialog without Buttons—&gt;类名为：LoginDialog</p><p>3.创建一个资源文件：</p><p>新建—&gt;Qt—&gt;Qt Resource File—&gt;名称为rc</p><p>4.创建一个注册的对话框</p><p>新建—&gt;Qt—&gt;Qt设计师界面类—&gt;选择界面模板：Dialog without Buttons—&gt;类名为：RegisterDialog</p><p>5.创建一个全局的文件</p><p>新建—&gt;c++—&gt;c++ Header File—&gt;名称为global.h</p><p>新建—&gt;c++—&gt;c++ Source File—&gt;名称为global.cpp</p><p>6.单例类的创建</p><p>新建—&gt;c++—&gt;c++ Header File—&gt;名称为singleton.h</p><p>7.创建一个Qt的Http发送的管理者类</p><p>新建—&gt;c++—&gt;c++class—&gt;类名为HttpMgr</p><hr><p>1.绑定和监听连接</p><p>利用visual studio创建一个空项目，项目名字为GateServer，然后按照之前的方法配置boost库和jsoncpp配置好后，我们添加一个新的类，名字叫CServer。添加成功后生成的CServer.h和CServer.cpp也会自动加入到项目中。</p><p>在<code>GateServer</code>项目中的逻辑：先是CServer启动，其启动后，就会监听连接。当对端有连接请求来之后，就交给<code>HttpConnection</code>类去管理，在这个类里面，它会先监听读事件，当对端有数据发来之后会触发读回调函数，在这个函数里面会处理读的请求<code>HandleReq()</code>，并且启动超时检测<code>CheckDeadline()</code>(检测发送是否超时)。其中在处理读请求<code>HandleReq()</code>函数中，会调用底层的<code>LogicSystem</code>逻辑层去处理请求，同时这里会把请求的<code>url</code>和<code>HttpConnection</code>对象的智能指针作为参数传过去。而在LogicSystem逻辑层类的<code>HandleGet</code>函数中，就是在map容器里面去找对应的url，如果之前没有注册过这个url，就会返回false，底层就会返回404错误；如果注册过，就会调用对应的回调(处理器)。</p><p>对应写回包就是写好响应头，然后准备对端请求的数据发送过去即可，如果在规定时间内写完发送给对端，在触发的写回调中就会把定时器取消，否则定时器会进行检测，超时的话它就会把socket强制关闭。</p>]]></content>
     
     
       
@@ -391,11 +391,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
@@ -431,11 +431,11 @@
     
     <category term="高并发" scheme="https://lxx93.online/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
-    
     <category term="IOServicePool" scheme="https://lxx93.online/tags/IOServicePool/"/>
     
     <category term="协程" scheme="https://lxx93.online/tags/%E5%8D%8F%E7%A8%8B/"/>
+    
+    <category term="boost" scheme="https://lxx93.online/tags/boost/"/>
     
   </entry>
   
@@ -532,8 +532,6 @@
     
     <category term="socket" scheme="https://lxx93.online/tags/socket/"/>
     
-    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
-    
     <category term="协议" scheme="https://lxx93.online/tags/%E5%8D%8F%E8%AE%AE/"/>
     
     <category term="套接字" scheme="https://lxx93.online/tags/%E5%A5%97%E6%8E%A5%E5%AD%97/"/>
@@ -545,6 +543,8 @@
     <category term="UDP" scheme="https://lxx93.online/tags/UDP/"/>
     
     <category term="select" scheme="https://lxx93.online/tags/select/"/>
+    
+    <category term="epoll" scheme="https://lxx93.online/tags/epoll/"/>
     
     <category term="poll" scheme="https://lxx93.online/tags/poll/"/>
     
